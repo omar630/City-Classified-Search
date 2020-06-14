@@ -72,12 +72,14 @@
                                 </div>
                                 <!-- Select job items start -->
                                 <div class="select-job-items1">
-                                    <select name="select1">
-                                        <option value="">Choose categories</option>
-                                        <option value="">Category 1</option>
-                                        <option value="">Category 2</option>
-                                        <option value="">Category 3</option>
-                                    </select>
+                                   <ul class="dropdown-menu">
+        <li><a class="dropdown-item clearfix" href="javascript:;">Action</a></li>
+        <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
+        <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="javascript:;"> Separated link</a></li>
+    </ul>
+
                                 </div>
                                 <!--  Select job items End-->
                                 <!-- Select job items start -->
@@ -96,10 +98,10 @@
                                         <input type="checkbox" >
                                         <span class="checkmark"></span>
                                     </label>
-                                    <label class="container">Ratings
+                                   <!-- <label class="container">Ratings
                                         <input type="checkbox" checked="checked active">
                                         <span class="checkmark"></span>
-                                    </label>
+                                    </label> -->
                                 </div>
                                 <!-- select-Categories End -->
                                 <!-- Select job items start -->
@@ -115,28 +117,8 @@
                             </div>
 
                             <div class="single-listing">
-                                <!-- Range Slider Start -->
-                                <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow">
-                                    <div class="small-section-tittle2">
-                                        <h4>Price range</h4>
-                                    </div>
-                                    <div class="widgets_inner">
-                                        <div class="range_item">
-                                            <!-- <div id="slider-range"></div> -->
-                                            <input type="text" class="js-range-slider" value="" />
-                                            <div class="d-flex align-items-center">
-                                                <div class="price_text">
-                                                    <p>Price :</p>
-                                                </div>
-                                                <div class="price_value d-flex justify-content-center">
-                                                    <input type="text" class="js-input-from" id="amount" readonly />
-                                                    <span>to</span>
-                                                    <input type="text" class="js-input-to" id="amount" readonly />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </aside>
+                               
+                                
                               <!-- Range Slider End -->
                                  <a href="#" class="btn list-btn mt-20">Reset</a>
                             </div>

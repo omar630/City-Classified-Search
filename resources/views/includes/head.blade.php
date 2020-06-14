@@ -13,3 +13,5 @@
             <link rel="stylesheet" href="{{url("assets/css/slick.css")}}">
             <link rel="stylesheet" href="{{url("assets/css/nice-select.css")}}">
             <link rel="stylesheet" href="{{url("assets/css/style.css")}}">
+
+         
