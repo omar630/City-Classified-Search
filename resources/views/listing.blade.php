@@ -72,13 +72,12 @@
                                 </div>
                                 <!-- Select job items start -->
                                 <div class="select-job-items1">
-                                   <ul class="dropdown-menu">
-        <li><a class="dropdown-item clearfix" href="javascript:;">Action</a></li>
-        <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
-        <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
-        <li class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="javascript:;"> Separated link</a></li>
-    </ul>
+                                    <select name="select1">
+                                        <option value="">Choose categories</option>
+                                        <option value="">Category 1</option>
+                                        <option value="">Category 2</option>
+                                        <option value="">Category 3</option>
+                                    </select>
 
                                 </div>
                                 <!--  Select job items End-->
