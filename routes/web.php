@@ -22,3 +22,10 @@ Route::get('catagories', 'CommonController@catagories')->name('catagoriespage');
 Route::get('listing', 'CommonController@listing')->name('listingpage');
 
 Route::get('contact', 'CommonController@contact')->name('contactpage');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
