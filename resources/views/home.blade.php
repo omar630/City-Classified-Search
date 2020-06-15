@@ -49,7 +49,7 @@
                         <!-- Section Tittle -->
                         <div class="section-tittle text-center mb-80">
                             <span>Most visited places</span>
-                            <h2>Popular Locations</h2>
+                            <h2>Popular Cities</h2>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                                 <img src="assets/img/gallery/location1.png" alt="">
                             </div>
                             <div class="location-details">
-                                <p>New York</p>
+                                <p>Hyderabad</p>
                                 <a href="#" class="location-btn">65 <i class="ti-plus"></i> Location</a>
                             </div>
                         </div>
@@ -71,7 +71,7 @@
                                 <img src="assets/img/gallery/location2.png" alt="">
                             </div>
                             <div class="location-details">
-                                <p>Paris</p>
+                                <p>Mumbai</p>
                                 <a href="#" class="location-btn">60 <i class="ti-plus"></i> Location</a>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                                 <img src="assets/img/gallery/location3.png" alt="">
                             </div>
                             <div class="location-details">
-                                <p>Rome</p>
+                                <p>Delhi</p>
                                 <a href="#" class="location-btn">50 <i class="ti-plus"></i> Location</a>
                             </div>
                         </div>

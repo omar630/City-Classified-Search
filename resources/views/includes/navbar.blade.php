@@ -69,14 +69,15 @@
                                             <li><a href="{{route('aboutpage')}}">About</a></li>
                                             <li><a href="{{route('catagoriespage')}}">Catagories</a></li>
                                             <li><a href="{{route('listingpage')}}">Listing</a></li>
-                                            <li><a href="#">Page</a>
+                                            <li><a href="{{route('commentspage')}}">Comments</a></li>
+                                          {{--   <li><a href="#">Page</a>
                                                 <ul class="submenu">
                                                     <li><a href="blog.html">Blog</a></li>
                                                     <li><a href="blog_details.html">Blog Details</a></li>
                                                     <li><a href="elements.html">Element</a></li>
                                                     <li><a href="listing_details.html">Listing details</a></li>
                                                 </ul>
-                                            </li>
+                                            </li> --}}
                                             <li><a href="{{route('contactpage')}}">Contact</a></li>
                                             <li class="add-list"><a href="listing_details.html"><i class="ti-plus"></i> add Listing</a></li>
                                              <!-- Authentication Links -->

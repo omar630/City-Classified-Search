@@ -26,6 +26,8 @@ Route::get('catagories', 'CommonController@catagories')->name('catagoriespage');
 Route::get('listing', 'PostController@index')->name('listingpage');
 
 Route::get('contact', 'CommonController@contact')->name('contactpage');
+
+Route::get('comments', 'CommonController@comments')->name('commentspage');
 Auth::routes();
 
 Route::get('/home', 'CommonController@home')->name('home');
@@ -33,12 +35,6 @@ Route::get('/home', 'CommonController@home')->name('home');
 Auth::routes();
 
 Route::any('search','PostController@searchFilter')->name('search-filter');
-
-Route::group(['middleware' => ['adminmiddleware']], function () {
-    Route::get('tesst',function(){
-        return 1;
-    });
-});
 
 Route::prefix('admin')->group(function() {
     Route::get('/','AdminController@login')->name('admin.login');
@@ -61,4 +57,3 @@ Route::prefix('admin')->group(function() {
 
         Route::resource('category','CategoryController');
     });
-});
