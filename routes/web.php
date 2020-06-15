@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::any('test',function(){
+	return Auth::user()->role_id;
+});
