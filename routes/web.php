@@ -23,7 +23,7 @@ Route::get('about', 'CommonController@about')->name('aboutpage');
 
 Route::get('catagories', 'CommonController@catagories')->name('catagoriespage');
 
-Route::get('listing', 'CommonController@listing')->name('listingpage');
+Route::get('listing', 'PostController@index')->name('listingpage');
 
 Route::get('contact', 'CommonController@contact')->name('contactpage');
 Auth::routes();
@@ -33,3 +33,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('test',function(){
+    return Post::leftJoin('contact_details','posts.id','contact_details.post_id')->get();
+});

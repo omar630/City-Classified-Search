@@ -14,7 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::leftJoin('contact_details','posts.id','contact_details.post_id')->get();
+        return view('listing',['posts' => $posts]);
     }
 
     /**

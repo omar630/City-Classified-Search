@@ -17,7 +17,7 @@ class CreateContactDetailsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('mobile');
-            $table->string('address');
+            $table->string('email');
             $table->foreignId('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->timestamps();
         });
