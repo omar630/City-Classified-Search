@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\PostContactDetail;
+use App\PostCategory;
 use Illuminate\Http\Request;
 
-class PostContactDetailController extends Controller
+class PostCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class PostContactDetailController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\PostContactDetail  $postContactDetail
+     * @param  \App\PostCategory  $postCategory
      * @return \Illuminate\Http\Response
      */
-    public function show(PostContactDetail $postContactDetail)
+    public function show(PostCategory $postCategory)
     {
         //
     }
@@ -52,10 +52,10 @@ class PostContactDetailController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\PostContactDetail  $postContactDetail
+     * @param  \App\PostCategory  $postCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(PostContactDetail $postContactDetail)
+    public function edit(PostCategory $postCategory)
     {
         //
     }
@@ -64,10 +64,10 @@ class PostContactDetailController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\PostContactDetail  $postContactDetail
+     * @param  \App\PostCategory  $postCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PostContactDetail $postContactDetail)
+    public function update(Request $request, PostCategory $postCategory)
     {
         //
     }
@@ -75,10 +75,10 @@ class PostContactDetailController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\PostContactDetail  $postContactDetail
+     * @param  \App\PostCategory  $postCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PostContactDetail $postContactDetail)
+    public function destroy(PostCategory $postCategory)
     {
         //
     }
