@@ -37,3 +37,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('test',function(){
     return Post::leftJoin('contact_details','posts.id','contact_details.post_id')->get();
 });
+
+Route::any('search','PostController@searchFilter')->name('search-filter');

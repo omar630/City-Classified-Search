@@ -15,9 +15,9 @@ class CreateContactDetailsTable extends Migration
     {
         Schema::create('contact_details', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('mobile');
-            $table->string('email');
+            $table->string('contact_name');
+            $table->string('contact_mobile');
+            $table->string('contact_email');
             $table->foreignId('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->timestamps();
         });
