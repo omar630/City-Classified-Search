@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostContactDetailsTable extends Migration
+class CreatePostCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreatePostContactDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_contact_details', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('post_id')->constrained();
-            $table->foreignId('contact_id')->references('id')->on('contact_details');
+        Schema::create('post_categories', function (Blueprint $table) {
+            $table->foreignId('post_id')->constrained()->onDelete('cascade');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreatePostContactDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_contact_details');
+        Schema::dropIfExists('post_categories');
     }
 }
