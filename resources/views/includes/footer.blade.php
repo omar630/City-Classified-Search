@@ -22,7 +22,7 @@
                                        <li><a href="{{route('homepage')}}">Home</a></li>
                                             <li><a href="{{route('aboutpage')}}">About</a></li>
                                          <li><a href="{{route('listingpage')}}">Listing</a></li>
-                                        
+
                                          <li><a href="{{route('contactpage')}}">Contact</a></li>
                                     </ul>
                                 </div>
@@ -36,7 +36,7 @@
                                         <li><a href="#">Reasonable Hotel</a></li>
                                         <li><a href="#">Popular Restaurant</a></li>
                                         <li><a href="#">Easy Shopping</a></li>
-                                        <li><a href="#">Night Life</a></li>     
+                                        <li><a href="#">Night Life</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -76,36 +76,36 @@
                </div>
             </div>
         </div>
-        
+
     <!-- JS here -->
 		<!-- All JS Custom Plugins Link Here here -->
-        <script src="{{url('assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
+        <script src="{{url('frontend/assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
 		<!-- Jquery, Popper, Bootstrap -->
-		<script src="{{url('/assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
-        <script src="{{url('/assets/js/popper.min.js')}}"></script>
-        <script src="{{url('/assets/js/bootstrap.min.js')}}"></script>
+		<script src="{{url('/frontend/assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
+        <script src="{{url('/frontend/assets/js/popper.min.js')}}"></script>
+        <script src="{{url('/frontend/assets/js/bootstrap.min.js')}}"></script>
 	    <!-- Jquery Mobile Menu -->
-        <script src="{{url('/assets/js/jquery.slicknav.min.js')}}"></script>
+        <script src="{{url('/frontend/assets/js/jquery.slicknav.min.js')}}"></script>
 
 		<!-- Jquery Slick , Owl-Carousel Plugins -->
-        <script src="{{url('/assets/js/owl.carousel.min.js')}}"></script>
-        <script src="{{url('/assets/js/slick.min.js')}}"></script>
+        <script src="{{url('/frontend/assets/js/owl.carousel.min.js')}}"></script>
+        <script src="{{url('/frontend/assets/js/slick.min.js')}}"></script>
 		<!-- One Page, Animated-HeadLin -->
-        <script src="{{url('/assets/js/wow.min.js')}}"></script>
-		<script src="{{url('/assets/js/animated.headline.js')}}"></script>
-        <script src="{{url('/assets/js/jquery.magnific-popup.js')}}"></script>
+        <script src="{{url('/frontend/assets/js/wow.min.js')}}"></script>
+		<script src="{{url('/frontend/assets/js/animated.headline.js')}}"></script>
+        <script src="{{url('/frontend/assets/js/jquery.magnific-popup.js')}}"></script>
 
 		<!-- Nice-select, sticky -->
-        <script src="{{url('/assets/js/jquery.nice-select.min.js')}}"></script>
-		<script src="{{url('/assets/js/jquery.sticky.js')}}"></script>
-        
+        <script src="{{url('/frontend/assets/js/jquery.nice-select.min.js')}}"></script>
+		<script src="{{url('/frontend/assets/js/jquery.sticky.js')}}"></script>
+
         <!-- contact js -->
-        <script src="{{url('/assets/js/contact.js')}}"></script>
-        <script src="{{url('/assets/js/jquery.form.js')}}"></script>
-        <script src="{{url('/assets/js/jquery.validate.min.js')}}"></script>
-        <script src="{{url('/assets/js/mail-script.js')}}"></script>
-        <script src="{{url('/assets/js/jquery.ajaxchimp.min.js')}}"></script>
-        
-		<!-- Jquery Plugins, main Jquery -->	
-        <script src="{{url('/assets/js/plugins.js')}}"></script>
-        <script src="{{url('/assets/js/main.js')}}"></script>
+        <script src="{{url('/frontend/assets/js/contact.js')}}"></script>
+        <script src="{{url('/frontend/assets/js/jquery.form.js')}}"></script>
+        <script src="{{url('/frontend/assets/js/jquery.validate.min.js')}}"></script>
+        <script src="{{url('/frontend/assets/js/mail-script.js')}}"></script>
+        <script src="{{url('/frontend/assets/js/jquery.ajaxchimp.min.js')}}"></script>
+
+		<!-- Jquery Plugins, main Jquery -->
+        <script src="{{url('/frontend/assets/js/plugins.js')}}"></script>
+        <script src="{{url('/frontend/assets/js/main.js')}}"></script>
