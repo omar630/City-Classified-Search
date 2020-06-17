@@ -8,14 +8,14 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    
+
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
 
-                    
+
                     <ul class="navbar-nav ml-auto">
-                        
+
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -64,7 +64,7 @@
                                 <!-- Main-menu -->
                                 <div class="main-menu f-right d-none d-lg-block">
                                     <nav>
-                                        <ul id="navigation">                                                                                                                                     
+                                        <ul id="navigation">
                                             <li><a href="{{route('homepage')}}">Home</a></li>
                                             <li><a href="{{route('aboutpage')}}">About</a></li>
                                             <li><a href="{{route('catagoriespage')}}">Catagories</a></li>

@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Category;
+
 class CommonController extends Controller
 {
 
     public function home(){
-        return view('home');
+        $categories = Category::all();
+        return view('home',['categories' => $categories]);
     }
      public function about(){
         return view('about');
