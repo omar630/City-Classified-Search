@@ -16,10 +16,14 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check() && Auth::user()->role_id != 1){
-
-            abort(401);
+        if(Auth::check()){
+            if(Auth::user()->role_id != 1)
+                abort(401);
         }
+        else{
+            return redirect()->route('admin.login');
+        }
+
         return $next($request);
     }
 }

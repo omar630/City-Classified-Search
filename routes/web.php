@@ -31,9 +31,6 @@ Auth::routes();
 Route::get('/home', 'CommonController@home')->name('home');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::any('search','PostController@searchFilter')->name('search-filter');
 
 Route::group(['middleware' => ['adminmiddleware']], function () {
@@ -43,8 +40,8 @@ Route::group(['middleware' => ['adminmiddleware']], function () {
 });
 
 Route::prefix('admin')->group(function() {
+    Route::get('/','AdminController@login')->name('admin.login');
     Route::group(['middleware' => 'adminmiddleware'], function(){
-        Route::get('/','AdminController@login')->name('admin.login');
         Route::get('login','AdminController@login')->name('admin.login');
         Route::get('dashboard', 'AdminController@dashboard')->name('admin.dashboard');
 
