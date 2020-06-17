@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->text('description');
             $table->string('address')->nullable();
             $table->string('city')->nullable();
+            $table->integer('publish_status')->default(0)->comment('0=>unpublished 1=>published');
             $table->timestamps();
         });
     }

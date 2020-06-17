@@ -44,6 +44,7 @@ class AdminController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'address' => $request->address,
+            'publish_status' => 1
         ]);
 
         if(isset($request->contact_name) && $request->contact_name != ''){
@@ -60,11 +61,6 @@ class AdminController extends Controller
                 'post_id' => $post->id,
                 'category_id' => $category
             ]);
-        }
-
-        $response = 0;
-        if($post){
-            $response = 1;
         }
         $categories = Category::all();
         return redirect()->route('admin.allposts');

@@ -1,20 +1,5 @@
 @extends('admin.layouts.app')
 @section('content')
-  <!-- Main Navigation -->
-  <header>
-
-      </ul>
-      <div class="sidenav-bg mask-strong"></div>
-    </div>
-    <!-- Sidebar navigation -->
-
-
-    </div>
-
-  </header>
-  <!-- Main Navigation -->
-
-  <!-- Main layout -->
   <main>
 
     <div class="container-fluid">

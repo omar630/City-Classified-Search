@@ -77,11 +77,6 @@
                     <div class="text-center">
                       <button class="btn purple-gradient btn-lg">Sign in</button>
                       <hr class="mt-4">
-                      <div class="inline-ul text-center d-flex justify-content-center">
-                        <a class="p-2 m-2 fa-lg tw-ic"><i class="fab fa-twitter white-text"></i></a>
-                        <a class="p-2 m-2 fa-lg li-ic"><i class="fab fa-linkedin-in white-text"> </i></a>
-                        <a class="p-2 m-2 fa-lg ins-ic"><i class="fab fa-instagram white-text"> </i></a>
-                      </div>
                     </div>
 
                   </div>

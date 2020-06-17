@@ -40,6 +40,9 @@
             <li>
               <a href="{{route('admin.profile')}}" class="collapsible-header waves-effect"><i class="w-fa fas fa-user"></i>Profile</a>
             </li>
+            <li>
+              <a href="{{route('category.index')}}" class="collapsible-header waves-effect"><i class="fab fa-microsoft"></i>Categories</a>
+            </li>
           </ul>
         </li>
         <!-- Side navigation links -->
