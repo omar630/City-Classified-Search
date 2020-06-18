@@ -27,6 +27,11 @@ class CommonController extends Controller
         return view('listing');
     }
 
+     public function post(){
+        return view('post');
+    }
+
+
 
     /**
      * Display a listing of the resource.
