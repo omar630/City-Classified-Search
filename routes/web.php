@@ -31,6 +31,7 @@ Auth::routes();
 Route::get('/home', 'CommonController@home')->name('home');
 
 Auth::routes();
+
 Route::any('search','PostController@searchFilter')->name('search-filter');
 
 Route::group(['middleware' => ['adminmiddleware']], function () {
@@ -57,5 +58,7 @@ Route::prefix('admin')->group(function() {
 
         Route::get('profile', 'AdminController@Profile')->name('admin.profile');
         Route::get('post/all', 'AdminController@allPosts')->name('admin.allposts');
+
+        Route::resource('category','CategoryController');
     });
 });
