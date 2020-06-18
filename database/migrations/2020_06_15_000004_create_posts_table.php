@@ -18,8 +18,8 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->text('description');
-            $table->string('address');
-            $table->string('city');
+            $table->string('address')->nullable();
+            $table->string('city')->nullable();
             $table->timestamps();
         });
     }

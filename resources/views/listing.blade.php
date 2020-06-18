@@ -1,4 +1,19 @@
 @extends('layouts.app')
+@section('css')
+<style type="text/css">
+    .chip{
+        background-color: #ff3d1b;
+        color: white !important;
+        padding: 3px 5px;
+        /* margin-bottom: 1rem; */
+        font-size: 13px;
+        color: rgba(0,0,0,.6);
+        /* cursor: pointer; */
+        /* background-color: #eceff1; */
+        border-radius: 16px;
+    }
+</style>
+@endsection
 @section('content')
  <!-- Preloader Start -->
     <div id="preloader-active">
@@ -48,15 +63,17 @@
                                 <div class="single-listing">
                                     <!-- input -->
                                     <div class="input-form">
-                                        <input type="text" placeholder="What are you finding?" name="search_query">
+                                        <input type="text" placeholder="What are you finding?" name="search_query"
+                                        value="{{app('request')->input('search_query')}}">
                                     </div>
                                     <!-- Select job items start -->
                                     <div class="select-job-items1">
                                         <select name="category">
                                             <option value="">Choose categories</option>
-                                            <option value="">All</option>
-                                            <option value="1">Hotel</option>
-                                            <option value="2">Business</option>
+                                            <option value="">All Catagories</option>
+                                            @foreach($categories as $category)
+                                                <option value="{{$category->id}}" @if(app('request')->input('category')==$category->id) checked=""@endif>{{$category->category_name}}</option>
+                                            @endforeach
                                         </select>
 
                                     </div>
@@ -95,7 +112,7 @@
 
 
                                   <!-- Range Slider End -->
-                                     <a href="#" class="btn list-btn mt-20" id="reset">Reset</a>
+                                     <a href="{{route('listingpage')}}" class="btn list-btn mt-20" id="reset">Reset</a>
                                 </div>
 
                             </form>
@@ -107,7 +124,11 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="count mb-35">
-                                    <span>5432 Listings are available</span>
+                                    @if(count($posts)>1)
+                                        <span>{{count($posts)}} Posts are available</span>
+                                    @else
+                                        <span>{{count($posts)}} Post is available</span>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -126,15 +147,19 @@
                                                 <div class="list-caption">
                                                     <span>Open</span>
                                                     <h3><a href="listing_details.html">{{$post->title}}</a></h3>
-                                                    <p>{{$post->description}}</p>
+                                                    <p>{!!$post->description!!}</p>
                                                     <p>{{$post->address}}</p>
                                                     <p>{{$post->city}}</p>
                                                     <div class="list-footer">
                                                         <ul>
-                                                            <li>{{$post->name}}</li>
-                                                            <li>{{$post->mobile}}</li>
-                                                            <li>{{$post->email}}</li>
-                                                            <li><b>Category:</b>{{$post->category_name}}</li>
+                                                            <li>{{$post['contact'][0]->contact_name ?? ''}}</li>
+                                                            <li>{{$post['contact'][0]->contact_mobile ?? '' }}</li>
+                                                            <li>{{$post['contact'][0]->contact_mail ?? ''}}</li>
+                                                            <li>
+                                                                @foreach ($post['categories'] as $category)
+                                                                    <i class="chip">{{$category->category_name}}</i>
+                                                                @endforeach
+                                                            </li>
                                                         </ul>
                                                     </div>
                                                 </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
- 
+
     <main>
 
         <!-- Hero Area Start-->
@@ -16,25 +16,24 @@
                                 <h1>Discover Great Places</h1>
                             </div>
                             <!--Hero form -->
-                            <form action="#" class="search-box">
+                            <form action="{{route('search-filter')}}" method="get" class="search-box">
                                 <div class="input-form">
-                                    <input type="text" placeholder="What are you looking for?">
+                                    <input type="text" placeholder="Type here" name="search_query">
                                 </div>
                                 <div class="select-form">
                                     <div class="select-itms">
-                                        <select name="select" id="select1">
+                                        <select name="category" id="select1">
                                             <option value="">All Catagories</option>
-                                            <option value="">Catagories One</option>
-                                            <option value="">Catagories Two</option>
-                                            <option value="">Catagories Three</option>
-                                            <option value="">Catagories Four</option>
+                                            @foreach($categories as $category)
+                                                <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="search-form">
-                                    <a href="#">Search</a>
-                                </div>	
-                            </form>	
+                                    <a href="#" onclick="$(this).closest('form').submit()">Search</a>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -258,7 +257,7 @@
                         <div class="col-lg-8">
                             <div class="visit-caption">
                                 <span>We are offering for you</span>
-                                <h3>Every Month, Millions of People 
+                                <h3>Every Month, Millions of People
                                     visit this site We’ve Built.</h3>
                                 <p>Unlike what its name implies, dry cleaning is not actually a 'dry' process. Clothes are soaked in a different solvent.</p>
                                 <!--Single Visit categories -->
@@ -299,7 +298,7 @@
                         <div class="section-tittle text-center mb-80">
                             <span>Our client testimonials</span>
                             <h2>What our client say</h2>
-                        </div> 
+                        </div>
                     </div>
                 </div>
                 <div class="row align-items-center">
@@ -358,7 +357,7 @@
                         <div class="section-tittle section-tittle2 text-center mb-40">
                             <span>Subscribe out newslatter</span>
                             <h2>Subscribe For Newsletter</h2>
-                        </div> 
+                        </div>
                         <!--Hero form -->
                         <form action="#" class="search-box">
                             <div class="input-form">
@@ -366,8 +365,8 @@
                             </div>
                             <div class="search-form">
                                 <a href="#">Send Now</a>
-                            </div>	
-                        </form>	
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -382,7 +381,7 @@
                         <div class="section-tittle text-center mb-70">
                             <span>Our blog</span>
                             <h2>News and tips</h2>
-                        </div> 
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -431,10 +430,10 @@
         <!-- Blog Ara End -->
 
     </main>
-   
-        
+
+
     <!-- Scroll Up -->
     <div id="back-top" >
         <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
-    </div>        
-@endsection  
+    </div>
+@endsection
