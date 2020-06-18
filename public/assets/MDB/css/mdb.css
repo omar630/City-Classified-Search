@@ -1673,6 +1673,10 @@ ul.stepper li.warning a .circle {
     background: linear-gradient(40deg, #45cafc, #303f9f) !important
 }
 
+.orange-gradient {
+    background: linear-gradient(40deg, #ff3d1c, #f42) !important
+}
+
 .purple-gradient-rgba {
     background: linear-gradient(40deg, rgba(255, 110, 196, 0.9), rgba(120, 115, 245, 0.9)) !important
 }

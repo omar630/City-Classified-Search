@@ -266,6 +266,10 @@ hr {
     z-index: -1;
     opacity: 0.5;
 }
+.section-padding4 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 .section-padding {
     padding-top: 120px;
     padding-bottom: 120px;

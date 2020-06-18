@@ -27,7 +27,11 @@ Route::get('listing', 'PostController@index')->name('listingpage');
 
 Route::get('contact', 'CommonController@contact')->name('contactpage');
 
-Route::get('comments', 'CommonController@comments')->name('commentspage');
+
+Route::get('post', 'CommonController@post')->name('postpage');
+
+Route::get('yourpost', 'CommonController@yourpost')->name('yourpostpage');
+
 Auth::routes();
 
 Route::get('/home', 'CommonController@home')->name('home');

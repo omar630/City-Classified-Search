@@ -26,9 +26,17 @@ class CommonController extends Controller
        public function listing(){
         return view('listing');
     }
- public function comments(){
-        return view('comments');
+
+     public function post(){
+        return view('post');
     }
+
+
+     public function yourpost(){
+        return view('yourpost');
+    }
+
+
 
 
     /**
