@@ -30,8 +30,6 @@ Route::get('contact', 'CommonController@contact')->name('contactpage');
 
 Route::get('post', 'CommonController@post')->name('postpage');
 
-Route::get('yourpost', 'CommonController@yourpost')->name('yourpostpage');
-
 Auth::routes();
 
 Route::get('/home', 'CommonController@home')->name('home');

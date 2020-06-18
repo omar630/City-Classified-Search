@@ -32,12 +32,6 @@ class CommonController extends Controller
     }
 
 
-     public function yourpost(){
-        return view('yourpost');
-    }
-
-
-
 
     /**
      * Display a listing of the resource.
