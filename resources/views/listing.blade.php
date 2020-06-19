@@ -45,6 +45,11 @@
         border: unset;
     }
 
+    .cover-image{
+        width: 300px;
+        height: 200px;
+    }
+
     @media (max-width: 980px) {
         .col-md-4 {
             -ms-flex: 1 0 33.333333%;
@@ -164,10 +169,14 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="count mb-35">
-                                    @if(count($posts)>1)
-                                        <span>{{count($posts)}} Posts are available</span>
+                                    @if($post_count>1)
+                                        <span>{{$post_count}} Posts are available</span>
                                     @else
-                                        <span>{{count($posts)}} Post is available</span>
+                                        @if($post_count==0)
+                                            <span >No Posts Foud</span>
+                                        @else
+                                            <span>{{$post_count}} Post is available</span>
+                                        @endif
                                     @endif
                                 </div>
                             </div>
@@ -184,9 +193,17 @@
 
                                             <!-- Card image -->
                                             <div class="view view-cascade overlay single-listing mb-30">
-                                                <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" class="card-img-top"
+                                                @php $coverImage = '';
+                                                  if($post->cover_image!=null){
+                                                    $coverImage = url('images/'.$post->cover_image);
+                                                  }
+                                                  else{
+                                                    $coverImage = url('images/no-image.png');
+                                                  }
+                                                @endphp
+                                                <img src="{{url($coverImage)}}" class="card-img-top cover-image"
                                                 alt="">
-                                                <a>
+                                                <a href="{{ url('view-post/'.$post->id) }}">
                                                 <div class="mask rgba-white-slight"></div>
                                                 </a>
                                             </div>
@@ -259,12 +276,7 @@
                                     <div class="col-xl-12">
                                         <div class="single-wrap d-flex justify-content-center">
                                             <nav aria-label="Page navigation example">
-                                                <ul class="pagination justify-content-start">
-                                                    <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">03</a></li>
-                                                <li class="page-item"><a class="page-link" href="#"><span class="ti-angle-right"></span></a></li>
-                                                </ul>
+                                                {{ $posts->links() }}
                                             </nav>
                                         </div>
                                     </div>

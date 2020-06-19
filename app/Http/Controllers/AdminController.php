@@ -63,7 +63,7 @@ class AdminController extends Controller
             ]);
         }
         $categories = Category::all();
-        return redirect()->route('admin.allposts');
+        return redirect()->route('viewpost',[$post->id]);
     }
 
     public function editPost(Request $request)
@@ -97,13 +97,15 @@ class AdminController extends Controller
                 PostCategory::create(['post_id' => $post->id,'category_id' => $category]);
             }
         }
-        return redirect()->route('admin.allposts');
+        return redirect()->route('viewpost',[$post->id]);
     }
 
     public function approvalPage()
     {
-        $posts = Post::where('publish_status',0)->latest()->get();
-        return view('admin.posts.approval',['posts' => $posts]);
+        $posts = Post::where('publish_status',0)->latest();
+        $post_count = $posts->count();
+        $posts = $posts->paginate(5);
+        return view('admin.posts.approval',['posts' => $posts, 'post_count' => $post_count]);
     }
 
     public function deletePost(Request $request)
@@ -130,7 +132,9 @@ class AdminController extends Controller
 
     public function allPosts()
     {
-        $posts = Post::where('publish_status',1)->latest()->get();
-        return view('admin.posts.all',['posts' => $posts]);
+        $posts = Post::where('publish_status',1)->latest();
+         $post_count = $posts->count();
+        $posts = $posts->paginate(5);
+        return view('admin.posts.all',['posts' => $posts, 'post_count' => $post_count]);
     }
 }

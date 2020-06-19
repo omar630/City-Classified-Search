@@ -37,13 +37,21 @@
             <!-- First card -->
 
             <!-- Second card -->
+           <div class="card mb-4 post-title-panel">
+              <div class="card-body">
+              <input type="file" name="cover_image">
+            </div>
+          </div>
+            <!-- Second card -->
+
+            <!-- Third card -->
             <div class="card mb-4">
              <textarea id="froala_description"></textarea>
               <input type="text" name="description" hidden="" id="description" value="">
             </div>
-            <!-- Second card -->
+            <!-- Third card -->
 
-            <!-- Third Card -->
+            <!-- Fourth Card -->
             <div class="card mb-4">
               <div class="card-body">
                 <div class="md-form mb-0 mt-2">
@@ -53,7 +61,7 @@
                 </div>
               </div>
             </div>
-            <!-- Third Card -->
+            <!-- Fourth Card -->
             <!--Section: Contact v.1 -->
 
                 <!--Form with header -->

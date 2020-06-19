@@ -5,6 +5,16 @@
         <script type="text/javascript" src="{{url('assets/froala/js/plugins.pkgd.min.js')}}"></script>
 <script type="text/javascript">
   let editor = new FroalaEditor('#froala_description', {
+    imageUploadParam: 'cover_image',
+
+    // Set the image upload URL.
+    imageUploadURL: "{{url('image-upload')}}",
+
+    // Additional upload params.
+    imageUploadParams: {_token: "{{csrf_token()}}"},
+
+    // Set request type.
+    imageUploadMethod: 'POST',
     imageStyles: {
             class1: 'img-responsive',
             class2: 'center-fr-image'

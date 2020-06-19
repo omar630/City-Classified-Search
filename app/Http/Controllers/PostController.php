@@ -19,9 +19,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts      = Post::where('publish_status', 1)->latest()->get();
+        $posts      = Post::where('publish_status', 1)->latest()->paginate(6);
+        $post_count = Post::where('publish_status', 1)->count();
         $categories = Category::all();
-        return view('listing', ['posts' => $posts, 'categories' => $categories]);
+        return view('listing', ['posts' => $posts, 'categories' => $categories, 'post_count' => $post_count]);
     }
 
     /**
@@ -46,9 +47,10 @@ class PostController extends Controller
                 $query->orWhere('description', 'like', '%' . $request->search_query . '%');
             });
         }
-        $posts = $posts->get();
+        $post_count = $posts->count();
+        $posts = $posts->paginate(6);
 
-        return view('listing', ['posts' => $posts, 'categories' => $categories]);
+        return view('listing', ['posts' => $posts, 'categories' => $categories, 'post_count' => $post_count]);
     }
 
     public function getAddPost()
@@ -60,15 +62,23 @@ class PostController extends Controller
     public function viewPost($id)
     {
         $post = Post::where('id',$id)->with('user')->with('categories')->first();
+        if(!$post)
+            return view('error.404');
         return view('post.view',['post' => $post]);
     }
 
     public function savepost(Request $request)
     {
+        $imageName = null;
+        if ($request->hasFile('cover_image')) {
+            $imageName = time().'-'.Auth::user()->first_name.'.'.$request->cover_image->extension();
+            $request->cover_image->move(public_path('images'), $imageName);
+        }
         $user_id = Auth::user()->id;
         $post    = Post::create([
             'user_id'        => $user_id,
             'title'          => $request->title,
+            'cover_image'    => $imageName,
             'description'    => $request->description,
             'address'        => $request->address,
             'publish_status' => 0,
@@ -91,7 +101,12 @@ class PostController extends Controller
             ]);
         }
         $categories = Category::all();
-        return redirect()->route('postpage');
+        return redirect()->route('viewpost',[$post->id]);
+    }
+
+    public function imageUploadPost(Request $request)
+    {
+
     }
 
     /**

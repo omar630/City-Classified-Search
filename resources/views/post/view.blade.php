@@ -42,7 +42,15 @@
             <!-- Featured image -->
             <div class="card card-cascade wider reverse">
               <div class="view view-cascade overlay custom-style">
-                <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(134).jpg" alt="Wide sample post image" class="img-fluid">
+                @php $coverImage = '';
+                  if($post->cover_image!=null){
+                    $coverImage = url('images/'.$post->cover_image);
+                  }
+                  else{
+                    $coverImage = url('images/no-image.png');
+                  }
+                  @endphp
+                <img src="{{url($coverImage)}}" alt="Wide sample post image" class="img-fluid">
                 <a>
                   <div class=""></div>
                 </a>
@@ -52,6 +60,15 @@
               <div class="card-body card-body-cascade text-center" style="margin: auto;width: 30%;margin-top: -1rem;">
                 <h2><a><strong>{!!$post->title!!}</strong></a></h2>
                 <p>Posted by <a>{{$post['user']->first_name}}</a>, {{Carbon\Carbon::parse($post->created_at)->format('d/m/y')}}</p>
+                @auth
+                  @if(Auth::user()->id == $post->user_id)
+                    @if($post->publish_status == 1)
+                      <strong>Status: </strong><span class="badge badge-success">Published</span>
+                    @else
+                      <strong>Status: </strong><span class="badge badge-secondary">Not Published</span>
+                    @endif
+                  @endif
+                @endauth
 
                 {{-- <!-- Social shares -->
                 <div class="social-counters ">

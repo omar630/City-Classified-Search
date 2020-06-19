@@ -28,7 +28,7 @@
         </div>
     </div>
     <main>
-<form method="post" action="{{route('savepost')}}">
+<form method="post" action="{{route('savepost')}}" enctype="multipart/form-data">
   @csrf
         <!-- Hero Start-->
         <div class="hero-area2  slider-height2 hero-overly2 d-flex align-items-center ">
@@ -87,10 +87,7 @@
             <!-- Second card -->
            <div class="card mb-4 post-title-panel">
               <div class="card-body">
-            <input type="file" accept="image/*" onchange="loadFile(event)">
-            <img id="output"/>
-<input type="submit" value="Upload Image" name="submit">
-</form>
+              <input type="file" name="cover_image">
             </div>
           </div>
             <!-- Second card -->

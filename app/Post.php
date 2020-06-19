@@ -22,4 +22,8 @@ class Post extends Model
     	return $this->hasMany('App\ContactDetail');
     }
 
+    public function images(){
+        return $this->hasMany('app\Image');
+    }
+
 }
