@@ -28,8 +28,9 @@ Route::get('listing', 'PostController@index')->name('listingpage');
 Route::get('contact', 'CommonController@contact')->name('contactpage');
 
 
-Route::get('post', 'CommonController@post')->name('postpage');
+Route::get('post', 'PostController@getAddPost')->name('postpage');
 
+Route::post('savepost','PostController@savepost')->name('savepost');
 Auth::routes();
 
 Route::get('/home', 'CommonController@home')->name('home');

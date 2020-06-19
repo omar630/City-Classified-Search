@@ -162,7 +162,7 @@
             height : "294",
             setup: function (editor) {
                 editor.on('init', function (e) {
-                  editor.setContent('{!!$post->description!!}');
+                  editor.setContent("{!!$post->description!!}");
                 });
               },
             init_instance_callback: function(editor) {
@@ -171,6 +171,13 @@
                 });
             }
          });
+        $('input[name="category[]"]').click(function () {
+          var total=$('input[name="category[]"]:checked').length;
+          if(total>3){
+            alert('you can select only upto 3 categories');
+            $(this).prop('checked', false);
+          }
+        });
         function desc(){
             $('#description').val(tinymce.activeEditor.getContent());
         }
