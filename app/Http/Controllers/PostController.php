@@ -60,6 +60,8 @@ class PostController extends Controller
     public function viewPost($id)
     {
         $post = Post::where('id',$id)->with('user')->with('categories')->first();
+        if(!$post)
+            return view('error.404');
         return view('post.view',['post' => $post]);
     }
 

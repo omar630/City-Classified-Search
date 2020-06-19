@@ -172,7 +172,11 @@
                                     @if(count($posts)>1)
                                         <span>{{count($posts)}} Posts are available</span>
                                     @else
-                                        <span>{{count($posts)}} Post is available</span>
+                                        @if(count($posts)==0)
+                                            <span >No Posts Foud</span>
+                                        @else
+                                            <span>{{count($posts)}} Post is available</span>
+                                        @endif
                                     @endif
                                 </div>
                             </div>
