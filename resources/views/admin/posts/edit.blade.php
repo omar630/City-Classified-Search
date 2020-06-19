@@ -17,7 +17,7 @@
 @section('content')
 <main>
     <div class="container">
-    <form action="{{route('admin.updatepost')}}" method="post">
+    <form action="{{route('admin.updatepost')}}">
         @csrf
         <input type="number" name="post_id" hidden="" value="{{$post->id}}">
       <!-- Section: Create Page -->

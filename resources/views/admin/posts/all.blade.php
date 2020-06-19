@@ -4,6 +4,9 @@
 .teal-text{
     padding: 3px;
 }
+a{
+  color: black;
+}
 </style>
 @endsection
 @section('js')
@@ -27,8 +30,16 @@
           <div class="col-lg-4 mb-4">
             <!-- Featured image -->
             <div class="view overlay z-depth-1">
-              <img src="https://mdbootstrap.com/img/Photos/Others/img (38).jpg" class="img-fluid" alt="First sample image">
-              <a>
+              @php $coverImage = '';
+                  if($post->cover_image!=null){
+                    $coverImage = url('images/'.$post->cover_image);
+                  }
+                  else{
+                    $coverImage = url('images/no-image.png');
+                  }
+                  @endphp
+              <img src="{{$coverImage}}" class="img-fluid" alt="First sample image">
+              <a href="{{ url('view-post/'.$post->id) }}">
                 <div class="mask rgba-white-slight"></div>
               </a>
             </div>
@@ -46,7 +57,7 @@
                <h6 class=""><i class="far fa-trash-alt"></i></i><strong> Delete </strong></h6>
             </a>
             </div>
-            <h4 class="mb-4"><strong>{{$post->title}}</strong></h4>
+            <h4 class="mb-4"><a href="{{ url('view-post/'.$post->id) }}"><strong>{{$post->title}}</strong></a></h4>
             <div class="discription">
                 {!!$post->description!!}
             </div>

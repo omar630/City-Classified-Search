@@ -65,10 +65,16 @@ class PostController extends Controller
 
     public function savepost(Request $request)
     {
+        $imageName = null;
+        if ($request->hasFile('cover_image')) {
+            $imageName = time().'-'.Auth::user()->first_name.'.'.$request->cover_image->extension();
+            $request->cover_image->move(public_path('images'), $imageName);
+        }
         $user_id = Auth::user()->id;
         $post    = Post::create([
             'user_id'        => $user_id,
             'title'          => $request->title,
+            'cover_image'    => $imageName,
             'description'    => $request->description,
             'address'        => $request->address,
             'publish_status' => 0,
@@ -92,6 +98,11 @@ class PostController extends Controller
         }
         $categories = Category::all();
         return redirect()->route('postpage');
+    }
+
+    public function imageUploadPost(Request $request)
+    {
+
     }
 
     /**

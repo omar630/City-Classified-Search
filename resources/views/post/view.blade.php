@@ -42,7 +42,15 @@
             <!-- Featured image -->
             <div class="card card-cascade wider reverse">
               <div class="view view-cascade overlay custom-style">
-                <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(134).jpg" alt="Wide sample post image" class="img-fluid">
+                @php $coverImage = '';
+                  if($post->cover_image!=null){
+                    $coverImage = url('images/'.$post->cover_image);
+                  }
+                  else{
+                    $coverImage = url('images/no-image.png');
+                  }
+                  @endphp
+                <img src="{{url($coverImage)}}" alt="Wide sample post image" class="img-fluid">
                 <a>
                   <div class=""></div>
                 </a>

@@ -68,3 +68,5 @@ Route::prefix('admin')->group(function() {
         Route::resource('category','CategoryController');
     });
 });
+
+Route::any('image-upload', 'PostImagesController@imageUploadPost')->name('image.upload.post');
