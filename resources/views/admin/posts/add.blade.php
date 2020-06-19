@@ -167,6 +167,13 @@
                 });
             }
          });
+        $('input[name="category[]"]').click(function () {
+          var total=$('input[name="category[]"]:checked').length;
+          if(total>3){
+            alert('you can select only upto 3 categories');
+            $(this).prop('checked', false);
+          }
+        });
         function desc(){
             $('#description').val(tinymce.activeEditor.getContent());
             console.log(tinymce.activeEditor.getContent());

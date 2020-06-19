@@ -101,8 +101,8 @@
             <div class="card mb-4">
               <div class="card-body">
                 <div class="md-form mb-0 mt-2">
-
-                  <textarea name="description" id="description"></textarea>
+                  <textarea name="" id="post_content"></textarea>
+                  <input type="text" name="description" hidden="" id="description">
                 </div>
               </div>
             </div>
@@ -233,17 +233,33 @@
 @endsection
 @section('js')
 <script type="text/javascript" src="{{url('assets/MDB/js/mdb.min.js')}}"></script>
-  <script src="{{url("ckeditor/ckeditor.js")}}"></script>
-
-  <script type="text/javascript">
+ <script type="text/javascript" src="{{url('assets/backend/js/vendor/tinymce/tinymce.min.js')}}"></script>
+    <script type="text/javascript">
+        // TinyMCE Initialization
+        tinymce.init({
+            selector:'#post_content',
+            menubar: true,
+            height : "294",
+            init_instance_callback: function(editor) {
+                editor.on('Change', function(e) {
+                  desc();
+                });
+            }
+         });
     $('input[name="category[]"]').click(function () {
       var total=$('input[name="category[]"]:checked').length;
       if(total>3){
         alert('you can select only upto 3 categories');
         $(this).prop('checked', false);
       }
-});
-    CKEDITOR.replace('description');
+    });
+    function desc(){
+            $('#description').val(tinymce.activeEditor.getContent());
+            console.log(tinymce.activeEditor.getContent());
+        }
+        $("#address-textarea").on('change keyup paste', function() {
+            $('#address').val($('#address-textarea').val());
+        });
     function uploadImage(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
