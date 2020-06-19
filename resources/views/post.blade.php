@@ -1,25 +1,22 @@
  @extends('layouts.app')
+ @section('css')
+<style type="text/css">
+    .asterisk{
+        color: orangered;
+        font-size: 1px;
+    }
+
+    .card.card-cascade.narrower {
+        margin-top: 3.25rem;
+    }
+
+    .categories-card {
+        max-height: 300px;
+        overflow: auto;
+    }
+</style>
+@endsection
 @section('content')
-
-       
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Material Design Bootstrap</title>
-    <!-- Font Awesome -->
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{url('assets/css/bootstrap.min.css')}}">
-    <!-- Material Design Bootstrap -->
-    <link rel="stylesheet" href="{{url('assets/MDB/css/mdb.min.css')}}">
-
-    <!-- Your custom styles (optional) -->
-  
-</head>
-
-
 <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
@@ -30,9 +27,10 @@
             </div>
         </div>
     </div>
-   
-    <main>
 
+    <main>
+<form method="post" action="{{route('savepost')}}">
+  @csrf
         <!-- Hero Start-->
         <div class="hero-area2  slider-height2 hero-overly2 d-flex align-items-center ">
             <div class="container">
@@ -48,16 +46,14 @@
 <body class="">
 
   <!-- Main Navigation -->
- 
-  
+
+
   <!-- Main Navigation -->
 
   <!-- Main layout -->
 
 
     <div class="container">
-
-
       <!-- Section: Create Page -->
       <section class="my-5">
 
@@ -78,26 +74,14 @@
             <div class="card mb-4 post-title-panel">
               <div class="card-body">
                 <div class="select-itms" style="margin-right: 120px">
-
-                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-<select name="owner" class="owner" style="margin: inherit;" >
+<select name="city" class="form-control" style="margin: inherit;" required="">
     <option value="">Select an City</option>
-    <option value="1">Hyderabad</option>
-    <option value="2">Mumbai</option>
-    <option value="3">Delhi</option>
-</select> 
-</div>
-<div style="float: left;margin-left: 300px">
-
-<select name="co-owner " class="co-owner" >
-    <option value="">Select an Address</option>
-    <option value="1">Bill</option>
-    <option value="2">Mark</option>
-    <option value="3">Larry</option>
+    <option value="hyderabad">Hyderabad</option>
+    <option value="mumbai">Mumbai</option>
+    <option value="delhi">Delhi</option>
 </select>
-  </div>
- 
+</div>
+
               </div>
             </div>
             <!-- First card -->
@@ -117,19 +101,19 @@
             <div class="card mb-4">
               <div class="card-body">
                 <div class="md-form mb-0 mt-2">
-                 
-                  <textarea name="text1"></textarea>
+
+                  <textarea name="description" id="description"></textarea>
                 </div>
               </div>
             </div>
-            
+
             <!-- Third Card -->
             <!-- Third Card -->
             <div class="card mb-4">
               <div class="card-body">
                 <div class="md-form mb-0 mt-2">
-                  <textarea type="text" id="form7" class="md-textarea form-control" rows="3"></textarea>
-                  <label class="form-check-label" for="form7">Address</label>
+                  <textarea type="text" id="address" class="md-textarea form-control" rows="3" name="address"></textarea>
+                  <label class="form-check-label" for="address">Address</label>
                 </div>
               </div>
             </div>
@@ -147,20 +131,20 @@
                     <!--Body -->
                     <div class="md-form">
                       <i class="fas fa-user prefix grey-text"></i>
-                      <input type="text" id="form-name" class="form-control" name="contact_name">
-                      <label for="form-name">Name</label>
+                      <input type="text" id="contact_name" class="form-control" name="contact_name">
+                      <label for="contact_name">Name</label>
                     </div>
 
                     <div class="md-form">
                       <i class="fas fa-envelope prefix grey-text"></i>
-                      <input type="text" id="form-email" class="form-control" name="contact_email">
-                      <label for="form-email">Email</label>
+                      <input type="text" id="contact_email" class="form-control" name="contact_email">
+                      <label for="contact_email">Email</label>
                     </div>
 
                     <div class="md-form">
                       <i class="fas fa-mobile-alt prefix grey-text"></i>
-                      <input type="text" id="form-Subject" class="form-control" name="contact_mobile">
-                      <label for="form-Subject">Mobile</label>
+                      <input type="text" id="contact_mobile" class="form-control" name="contact_mobile">
+                      <label for="contact_mobile">Mobile</label>
                     </div>
                   </div>
 
@@ -175,9 +159,9 @@
           <div class="col-lg-4">
 
             <!-- Card -->
-           
+
             <!-- Card -->
-            
+
             <!-- Card -->
             <div class="card card-cascade narrower " >
 
@@ -187,28 +171,14 @@
               </div>
               <!-- Card image -->
 
-              <!-- Card content -->
-              <div class="card-body card-body-cascade">
-                <fieldset class="form-check mb-4">
-                  <input class="form-check-input" type="checkbox" id="color-1">
-                  <label class="form-check-label" for="color-1">Material Design</label>
-                </fieldset>
-                <fieldset class="form-check mb-4">
-                  <input class="form-check-input" type="checkbox" id="color-2">
-                  <label class="form-check-label" for="color-2">Tutorials</label>
-                </fieldset>
-                <fieldset class="form-check mb-4">
-                  <input class="form-check-input" type="checkbox" id="color-3">
-                  <label class="form-check-label" for="color-3">Marketing Automation</label>
-                </fieldset>
-                <fieldset class="form-check mb-4">
-                  <input class="form-check-input" type="checkbox" id="color-4">
-                  <label class="form-check-label" for="color-4">Design Resources</label>
-                </fieldset>
-                <fieldset class="form-check">
-                  <input class="form-check-input" type="checkbox" id="color-5">
-                  <label class="form-check-label" for="color-5">Random Stories</label>
-                </fieldset>
+             <!-- Card content -->
+              <div class="card-body card-body-cascade categories-card">
+                @foreach($categories as $category)
+                    <fieldset class="form-check mb-4">
+                      <input class="form-check-input" type="checkbox" name="category[]" id="{{$category->category_name}}" value="{{$category->id}}">
+                      <label class="form-check-label" for="{{$category->category_name}}">{{$category->category_name}}</label>
+                    </fieldset>
+                @endforeach
               </div>
               <!-- Card content -->
 
@@ -234,7 +204,7 @@
                 <p><i class="far fa-calendar-alt mr-1" aria-hidden="true"></i> Publish: <strong> Published after approval</strong></p>
                 <div class="text-right">
                   <button class="btn btn-flat waves-effect">Discard</button>
-                  <button class="btn btn-primary">Publish</button>
+                  <button class="btn btn-primary" type="submit">Publish</button>
                 </div>
 
               </div>
@@ -251,57 +221,43 @@
       <!-- Section: Create Page -->
 
     </div>
-
+</form>
   </main>
  <div id="back-top" >
         <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
-    </div>       
+    </div>
   <!-- Main layout -->
 
   <!-- SCRIPTS -->
-  <!-- JQuery -->
-
-  <script src="{{url('assets/MDB/js/jquery.min.js')}}"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="{{url('assets/MDB/js/popper.min.js')}}"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="{{url('assets/MDB/js/bootstrap.js')}}"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="{{url('assets/MDB/js/mdb.min.js')}}"></script>
-  <!-- TinyMCE -->
-  <script type="text/javascript" src="{{url('assets/MDB/js/vendor/tinymce/tinymce.min.js')}}"></script>
-
-  <!-- Custom scripts -->
-  <script>
-
-    // SideNav Initialization
-    $(".button-collapse").sideNav();
-
-    var container = document.querySelector('.custom-scrollbar');
-    var ps = new PerfectScrollbar(container, {
-      wheelSpeed: 2,
-      wheelPropagation: true,
-      minScrollbarLength: 20
-    });
-
-    // TinyMCE Initialization
-    tinymce.init({ selector:'#post_content', menubar: false, height : "294" });
-
-  </script>
-
-@endsection 
+@endsection
 @section('js')
+<script type="text/javascript" src="{{url('assets/MDB/js/mdb.min.js')}}"></script>
   <script src="{{url("ckeditor/ckeditor.js")}}"></script>
-  
-  <script>
-    CKEDITOR.replace('text1');
+
+  <script type="text/javascript">
+    $('input[name="category[]"]').click(function () {
+      var total=$('input[name="category[]"]:checked').length;
+      if(total>3){
+        alert('you can select only upto 3 categories');
+        $(this).prop('checked', false);
+      }
+});
+    CKEDITOR.replace('description');
+    function uploadImage(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#preview')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
   </script>
-  <script>
-    $('.owner').change(function() {
-  $('.co-owner').prop('disabled', $(this).val().trim() == '');
-}).change();
-  </script>
- 
+
 
   @endsection
 

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
 use App\Category;
-
+use App\Post;
+use App\PostCategory;
+use App\ContactDetail;
+use Auth;
 use Illuminate\Http\Request;
-use DB;
 
 class PostController extends Controller
 {
@@ -17,9 +18,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()->get();
+        $posts      = Post::where('publish_status', 1)->latest()->get();
         $categories = Category::all();
-        return view('listing',['posts' => $posts, 'categories' => $categories]);
+        return view('listing', ['posts' => $posts, 'categories' => $categories]);
     }
 
     /**
@@ -28,54 +29,62 @@ class PostController extends Controller
      */
     public function searchFilter(Request $request)
     {
-        $posts = Post::latest();
+        $posts      = Post::where('publish_status', 1)->latest();
         $categories = Category::all();
-        if($request->search_query==''){
-            if(isset($request->city) && isset($request->category)){
-                $posts = $posts->Where('city','like','%'.$request->city.'%')->where('posts.publish_status',1)->latest('posts.created_at')->whereHas('categories',function($query) use($request){
-                        return $query->where('id',$request->category);
-                })->get();
-            }
-            elseif(!isset($request->city) && isset($request->category)){
-                $posts = $posts->where('posts.publish_status',1)->latest('posts.created_at')->whereHas('categories',function($query) use($request){
-                        return $query->where('id',$request->category);
-                })->get();
-            }
-            elseif(isset($request->city) && !isset($request->category)){
-                $posts = $posts->where('city',$request->city)->where('posts.publish_status',1)->latest('posts.created_at')->get();
-            }
+        if (isset($request->city) && $request->city != '') {
+            $posts->Where('city', 'like', '%' . $request->city . '%');
         }
-        else{
-            if(isset($request->city) && isset($request->category)){
-                $posts = $posts->Where('city','like','%'.$request->city.'%')->Where('title','like','%'.$request->search_query.'%')->orWhere('description','link','%'.$request->search_query.'%')->where('posts.publish_status',1)->latest('posts.created_at')->whereHas('categories',function($query) use($request){
-                        return $query->where('id',$request->category);
-                })->get();
-            }
-            elseif(!isset($request->city) && isset($request->category)){
-                $posts = $posts->Where('title','like','%'.$request->search_query.'%')->where('posts.publish_status',1)->latest('posts.created_at')->whereHas('categories',function($query) use($request){
-                         return $query->where('id',$request->category);
-                })->orWhere('description','like','%'.$request->search_query.'%')->get();
-            }
-            elseif(isset($request->city) && !isset($request->category)){
-                $posts = $posts->Where('title','like','%'.$request->search_query.'%')->orWhere('description','like','%'.$request->search_query.'%')->where('posts.publish_status',1)->where('city','like','%'.$request->city.'%')->latest('posts.created_at')->get();
-            }
-            else{
-                $posts = $posts->where('city','like','%'.$request->search_query.'%')->orWhere('title','like','%'.$request->search_query.'%')->orWhere('description','like','%'.$request->search_query.'%')->Where('posts.publish_status',1)->latest('posts.created_at')->get();
-            }
+        if (isset($request->category) && $request->category != '') {
+            $posts->whereHas('categories', function ($query) use ($request) {
+                return $query->where('id', $request->category);
+            });
+        }
+        if (isset($request->search_query) && $request->search_query != '') {
+            $posts->where(function ($query) use ($request) {
+                $query->where('title', 'like', '%' . $request->search_query . '%');
+                $query->orWhere('description', 'like', '%' . $request->search_query . '%');
+            });
+        }
+        $posts = $posts->get();
 
+        return view('listing', ['posts' => $posts, 'categories' => $categories]);
+    }
+
+    public function getAddPost()
+    {
+        $categories = Category::all();
+        return view('post', ['categories' => $categories]);
+    }
+
+    public function savepost(Request $request)
+    {
+        $user_id = Auth::user()->id;
+        $post    = Post::create([
+            'user_id'        => $user_id,
+            'title'          => $request->title,
+            'description'    => $request->description,
+            'address'        => $request->address,
+            'publish_status' => 0,
+            'city'           => $request->city
+        ]);
+
+        if (isset($request->contact_name) && $request->contact_name != '') {
+            ContactDetail::create([
+                'post_id'        => $post->id,
+                'contact_name'   => $request->contact_name,
+                'contact_mobile' => $request->contact_mobile,
+                'contact_email'  => $request->contact_email,
+            ]);
         }
-            // if(isset($request->category) && isset($request->city) && $request->category != '0' && $request->city != '0' ){
-            //     $posts = Post::leftJoin('contact_details','posts.id','contact_details.post_id')->Where('address','like','%'.$request->search_query.'%')->Where('city','like','%'.$request->search_query.'%')->get();
-            // }
-            // if(!isset($request->city) && isset($request->category) && $request->category !='0'){
-            //     $posts = DB::table('post_categories')->join('posts','posts.id','post_categories.post_id')->join('categories','post_categories.category_id','categories.id')->leftJoin('contact_details','posts.id','contact_details.post_id')->Where('address','like','%'.$request->search_query.'%')->orWhere('title','like','%'.$request->search_query.'%')->where('category_id',$request->category)->get();
-            // }
-            // if(isset($request->category) && isset($request->city) && $request->category != '0' && $request->city != '0' ){
-            //     $posts = Post::leftJoin('contact_details','posts.id','contact_details.post_id')->Where('address','like','%'.$request->search_query.'%')->Where('city','like','%'.$request->search_query.'%')->get();
-            // }
-        if($request->search_query=='' && $request->city=='' && $request->category=='')
-           $posts = $posts->where('posts.publish_status',1)->latest('posts.created_at')->get();
-        return view('listing',['posts' => $posts, 'categories' => $categories]);
+
+        foreach ($request->category as $category) {
+            PostCategory::create([
+                'post_id'     => $post->id,
+                'category_id' => $category,
+            ]);
+        }
+        $categories = Category::all();
+        return redirect()->route('postpage');
     }
 
     /**

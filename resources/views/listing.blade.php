@@ -1,16 +1,46 @@
 @extends('layouts.app')
 @section('css')
 <style type="text/css">
-    .chip{
-        background-color: #ff3d1b;
-        color: white !important;
-        padding: 3px 5px;
-        /* margin-bottom: 1rem; */
-        font-size: 13px;
-        color: rgba(0,0,0,.6);
-        /* cursor: pointer; */
-        /* background-color: #eceff1; */
-        border-radius: 16px;
+    .chip {
+        margin-right: 0rem;
+        font-size: 10px;
+        height: 25px;
+        line-height: 25px;
+    }
+
+    .card {
+        height: 28rem;
+    }
+
+    .card-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 6.6em;
+    }
+
+    .card-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .card ul>li {
+        margin-bottom: 1rem;
+    }
+
+    .card-footer {
+        background: #ff3d1c;
+        padding: unset;
+        border: unset;
+    }
+
+    @media (max-width: 980px) {
+        .col-md-4 {
+            -ms-flex: 1 0 33.333333%;
+            flex: unset;
+            max-width: unset !important;
+        }
     }
 </style>
 @endsection
@@ -138,7 +168,48 @@
                                 <div class="row">
                                     <!-- post card starts   -->
                                     @foreach($posts as $post)
-                                        <div class="col-lg-6 ">
+                                    <div class="col-md-4 mb-md-0 mb-4">
+                                        <!-- Card -->
+                                        <div class="card card-cascade narrower" style="margin-top: 44px">
+
+                                            <!-- Card image -->
+                                            <div class="view view-cascade overlay single-listing mb-30">
+                                                <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" class="card-img-top"
+                                                alt="">
+                                                <a>
+                                                <div class="mask rgba-white-slight"></div>
+                                                </a>
+                                            </div>
+                                            <!-- Card image -->
+                                            <!-- Card content -->
+                                            <div class="card-body card-body-cascade">
+                                                @foreach ($post['categories'] as $category)
+                                                <div class="chip">{{$category->category_name}}</div>
+                                                @endforeach
+                                                {{-- <h5 class="pink-text"><i class="fas fa-utensils"></i> Culinary</h5> --}}
+                                                <!-- Title -->
+                                                <h4 class="card-title">{{$post->title}}</h4>
+                                                <hr>
+                                                <!-- Text -->
+                                                <div class="card-description card-text">
+                                                    {!!$post->description!!}
+                                                </div>
+                                                {{-- <a class="btn btn-unique waves-effect waves-light">Button</a> --}}
+                                            </div>
+                                            <!-- Card content -->
+                                            <!-- Card footer -->
+                                            <div class=" card-footer lighten-3 text-center rounded-bottom wrapper-ul">
+                                                <ul class="list-unstyled list-inline font-small mt-3">
+                                                    <li class="list-inline-item pr-2 white-text"> <i class="fas fa-user"></i></i> {{$post['user']->first_name}}</li>
+                                                    <li class="list-inline-item pr-2 white-text"><i class="far fa-clock"></i> {{Carbon\Carbon::parse($post->created_at)->format('d/m/y')}} </li>
+                                                </ul>
+                                            </div>
+                                            <!-- Card footer -->
+
+                                        </div>
+                                        <!-- Card -->
+                                    </div>
+                                        {{-- <div class="col-lg-6 ">
                                             <div class="single-listing mb-30">
                                                 <div class="list-img">
                                                     <img src="assets/img/gallery/list1.png" alt="">
@@ -164,7 +235,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     @endforeach
                                     <!-- post card ends   -->
                                 </div>

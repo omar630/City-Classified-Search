@@ -6,8 +6,8 @@
         font-size: 1px;
     }
     .card.card-cascade.narrower {
-    margin-top: 3.25rem;
-}
+      margin-top: 3.25rem;
+    }
 </style>
 @endsection
 @section('content')
