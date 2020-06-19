@@ -6,6 +6,7 @@ use App\Category;
 use App\Post;
 use App\PostCategory;
 use App\ContactDetail;
+use App\User;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -53,7 +54,13 @@ class PostController extends Controller
     public function getAddPost()
     {
         $categories = Category::all();
-        return view('post', ['categories' => $categories]);
+        return view('post.add', ['categories' => $categories]);
+    }
+
+    public function viewPost($id)
+    {
+        $post = Post::where('id',$id)->with('user')->with('categories')->first();
+        return view('post.view',['post' => $post]);
     }
 
     public function savepost(Request $request)
