@@ -87,10 +87,7 @@
             <!-- Second card -->
            <div class="card mb-4 post-title-panel">
               <div class="card-body">
-            <input type="file" accept="image/*" name="cover_image">
-            <img id="output"/>
-<input type="submit" value="Upload Image" name="submit">
-</form>
+              <input type="file" name="cover_image">
             </div>
           </div>
             <!-- Second card -->

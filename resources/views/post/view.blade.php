@@ -60,6 +60,15 @@
               <div class="card-body card-body-cascade text-center" style="margin: auto;width: 30%;margin-top: -1rem;">
                 <h2><a><strong>{!!$post->title!!}</strong></a></h2>
                 <p>Posted by <a>{{$post['user']->first_name}}</a>, {{Carbon\Carbon::parse($post->created_at)->format('d/m/y')}}</p>
+                @auth
+                  @if(Auth::user()->id == $post->user_id)
+                    @if($post->publish_status == 1)
+                      <strong>Status: </strong><span class="badge badge-success">Published</span>
+                    @else
+                      <strong>Status: </strong><span class="badge badge-secondary">Not Published</span>
+                    @endif
+                  @endif
+                @endauth
 
                 {{-- <!-- Social shares -->
                 <div class="social-counters ">

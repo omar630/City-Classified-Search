@@ -63,7 +63,7 @@ class AdminController extends Controller
             ]);
         }
         $categories = Category::all();
-        return redirect()->route('admin.allposts');
+        return redirect()->route('viewpost',[$post->id]);
     }
 
     public function editPost(Request $request)
@@ -97,7 +97,7 @@ class AdminController extends Controller
                 PostCategory::create(['post_id' => $post->id,'category_id' => $category]);
             }
         }
-        return redirect()->route('admin.allposts');
+        return redirect()->route('viewpost',[$post->id]);
     }
 
     public function approvalPage()

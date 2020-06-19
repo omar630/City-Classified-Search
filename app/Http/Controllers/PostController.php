@@ -97,7 +97,7 @@ class PostController extends Controller
             ]);
         }
         $categories = Category::all();
-        return redirect()->route('postpage');
+        return redirect()->route('viewpost',[$post->id]);
     }
 
     public function imageUploadPost(Request $request)
