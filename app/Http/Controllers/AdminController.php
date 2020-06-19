@@ -13,6 +13,8 @@ use App\PostCategory;
 use App\ContactDetail;
 use Auth;
 
+use App\Http\Controllers\CommonFunctionsController;
+
 class AdminController extends Controller
 {
 
@@ -39,30 +41,13 @@ class AdminController extends Controller
 
     public function savepost(Request $request)
     {
-        $post = Post::create([
-            'user_id' => $request->user_id,
-            'title' => $request->title,
-            'description' => $request->description,
-            'address' => $request->address,
-            'publish_status' => 1
-        ]);
+        $post = CommonFunctionsController::savePost($request, Auth::user()->id);
+        return redirect()->route('viewpost',[$post->id]);
+    }
 
-        if(isset($request->contact_name) && $request->contact_name != ''){
-            ContactDetail::create([
-                'post_id' => $post->id,
-                'contact_name' => $request->contact_name,
-                'contact_mobile' => $request->contact_mobile,
-                'contact_email' => $request->contact_email
-            ]);
-        }
-
-        foreach ($request->category as $category) {
-            PostCategory::create([
-                'post_id' => $post->id,
-                'category_id' => $category
-            ]);
-        }
-        $categories = Category::all();
+    public function updatePost(Request $request)
+    {
+        $post = CommonFunctionsController::updatePost($request);
         return redirect()->route('viewpost',[$post->id]);
     }
 
@@ -72,32 +57,6 @@ class AdminController extends Controller
         $post = Post::find($request->id);
         $categories = Category::all();
         return view('admin.posts.edit',['post'=>$post, 'categories' => $categories]);
-    }
-
-    public function updatePost(Request $request)
-    {
-        $post = Post::where('id',$request->post_id)->first();
-            $post->update([
-                'title' => $request->title,
-                'description' => $request->description,
-                'address' => $request->address
-            ]);
-            if(isset($request->contact_name) && $request->contact_name != ''){
-                $contact = ContactDetail::where('post_id',$request->post_id);
-                $contact->updateOrCreate([
-                    'post_id' => $request->post_id,
-                    'contact_name' => $request->contact_name,
-                    'contact_mobile' => $request->contact_mobile,
-                    'contact_email' => $request->contact_email
-                ]);
-        }
-        PostCategory::where('post_id',$request->post_id)->delete();
-        if(isset($request->category)){
-            foreach($request->category as $category) {
-                PostCategory::create(['post_id' => $post->id,'category_id' => $category]);
-            }
-        }
-        return redirect()->route('viewpost',[$post->id]);
     }
 
     public function approvalPage()

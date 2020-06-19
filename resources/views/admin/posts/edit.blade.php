@@ -17,7 +17,7 @@
 @section('content')
 <main>
     <div class="container">
-    <form action="{{route('admin.updatepost')}}">
+    <form action="{{route('admin.updatepost')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="number" name="post_id" hidden="" value="{{$post->id}}">
       <!-- Section: Create Page -->
@@ -49,7 +49,7 @@
             <!-- Third card -->
             <div class="card mb-4">
               <textarea id="froala_description">{!!$post->description!!}</textarea>
-              <input type="text" name="description" hidden="" id="description" value="">
+              <input type="text" name="description" hidden="" id="description" value="{!!$post->description!!}">
             </div>
             <!-- Third card -->
 

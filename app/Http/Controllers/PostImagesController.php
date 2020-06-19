@@ -6,14 +6,15 @@ use App\PostImages;
 use Illuminate\Http\Request;
 use Auth;
 
+use App\Http\Controllers\CommonFunctionsController;
+
 class PostImagesController extends Controller
 {
 
     public function imageUploadPost(Request $request)
     {
         if ($request->hasFile('cover_image')) {
-            $imageName = time().'-'.Auth::user()->first_name.'.'.$request->cover_image->extension();
-            $request->cover_image->move(public_path('images'), $imageName);
+            $imageName = CommonFunctionsController::uploadImage($request->file('cover_image'));
             return json_encode(array('link' => url('images/'.$imageName)));
         }
     }

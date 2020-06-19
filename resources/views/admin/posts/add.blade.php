@@ -13,9 +13,9 @@
 @section('content')
 <main>
     <div class="container">
-    <form action="{{route('admin.savepost')}}" method="post">
+    <form action="{{route('admin.savepost')}}" method="post" enctype="multipart/form-data">
         @csrf
-        <input type="number" name="user_id" hidden="" value="{{1}}">
+        <input type="number" name="user_id" hidden="" value="{{Auth::user()->id}}">
       <!-- Section: Create Page -->
       <section class="my-5">
 
