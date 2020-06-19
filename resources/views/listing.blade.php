@@ -8,8 +8,18 @@
         line-height: 25px;
     }
 
+    .chip a{
+        color: #635c5c;
+    }
+
+    .card-body {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 0 1.25rem;
+    }
+
     .card {
-        height: 28rem;
+        height: 35rem;
     }
 
     .card-text {
@@ -75,7 +85,7 @@
         <!--Hero End -->
         <!-- listing Area Start -->
         <div class="listing-area pt-120 pb-120">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <!-- Left content -->
                     <div class="col-xl-4 col-lg-4 col-md-6">
@@ -184,7 +194,7 @@
                                             <!-- Card content -->
                                             <div class="card-body card-body-cascade">
                                                 @foreach ($post['categories'] as $category)
-                                                <div class="chip">{{$category->category_name}}</div>
+                                                <div class="chip"><a href="{{route('search-filter',['category' => $category->id])}}">{{$category->category_name}}</a></div>
                                                 @endforeach
                                                 {{-- <h5 class="pink-text"><i class="fas fa-utensils"></i> Culinary</h5> --}}
                                                 <!-- Title -->
