@@ -21,7 +21,7 @@ a{
       <section class="my-5 text-center text-lg-left wow fadeIn" data-wow-delay="0.3s">
 
         <!-- Section heading -->
-        <h2 class="text-center my-5 h1">Pending Approvals({{count($posts)}})</h2>
+        <h2 class="text-center my-5 h1">Pending Approvals({{$post_count}})</h2>
         @foreach($posts as $post)
         <!-- Grid row -->
         <div class="row mt-3">
@@ -85,30 +85,7 @@ a{
         @endforeach
         <!-- Pagination dark -->
         <nav class="wow fadeIn mb-4 mt-4" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
-          <ul class="pagination pg-dark flex-center">
-            <!-- Arrow left -->
-            <li class="page-item">
-              <a class="page-link waves-effect waves-effect" aria-label="Previous">
-                <span aria-hidden="true">«</span>
-                <span class="sr-only">Previous</span>
-              </a>
-            </li>
-
-            <!-- Numbers -->
-            <li class="page-item active"><a class="page-link waves-effect waves-effect">1</a></li>
-            <li class="page-item"><a class="page-link waves-effect waves-effect">2</a></li>
-            <li class="page-item"><a class="page-link waves-effect waves-effect">3</a></li>
-            <li class="page-item"><a class="page-link waves-effect waves-effect">4</a></li>
-            <li class="page-item"><a class="page-link waves-effect waves-effect">5</a></li>
-
-            <!-- Arrow right -->
-            <li class="page-item">
-              <a class="page-link waves-effect waves-effect" aria-label="Next">
-                <span aria-hidden="true">»</span>
-                <span class="sr-only">Next</span>
-              </a>
-            </li>
-          </ul>
+          {{ $posts->links() }}
         </nav>
         <!-- /Pagination dark -->
 

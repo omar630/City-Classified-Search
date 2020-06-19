@@ -19,9 +19,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts      = Post::where('publish_status', 1)->latest()->get();
+        $posts      = Post::where('publish_status', 1)->latest()->paginate(6);
+        $post_count = Post::where('publish_status', 1)->count();
         $categories = Category::all();
-        return view('listing', ['posts' => $posts, 'categories' => $categories]);
+        return view('listing', ['posts' => $posts, 'categories' => $categories, 'post_count' => $post_count]);
     }
 
     /**
@@ -46,9 +47,10 @@ class PostController extends Controller
                 $query->orWhere('description', 'like', '%' . $request->search_query . '%');
             });
         }
-        $posts = $posts->get();
+        $post_count = $posts->count();
+        $posts = $posts->paginate(6);
 
-        return view('listing', ['posts' => $posts, 'categories' => $categories]);
+        return view('listing', ['posts' => $posts, 'categories' => $categories, 'post_count' => $post_count]);
     }
 
     public function getAddPost()

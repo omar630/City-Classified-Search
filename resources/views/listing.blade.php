@@ -169,13 +169,13 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="count mb-35">
-                                    @if(count($posts)>1)
-                                        <span>{{count($posts)}} Posts are available</span>
+                                    @if($post_count>1)
+                                        <span>{{$post_count}} Posts are available</span>
                                     @else
-                                        @if(count($posts)==0)
+                                        @if($post_count==0)
                                             <span >No Posts Foud</span>
                                         @else
-                                            <span>{{count($posts)}} Post is available</span>
+                                            <span>{{$post_count}} Post is available</span>
                                         @endif
                                     @endif
                                 </div>
@@ -276,12 +276,7 @@
                                     <div class="col-xl-12">
                                         <div class="single-wrap d-flex justify-content-center">
                                             <nav aria-label="Page navigation example">
-                                                <ul class="pagination justify-content-start">
-                                                    <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">03</a></li>
-                                                <li class="page-item"><a class="page-link" href="#"><span class="ti-angle-right"></span></a></li>
-                                                </ul>
+                                                {{ $posts->links() }}
                                             </nav>
                                         </div>
                                     </div>
