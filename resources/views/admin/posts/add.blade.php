@@ -38,8 +38,8 @@
 
             <!-- Second card -->
             <div class="card mb-4">
-              <textarea name="" id="post_content"></textarea>
-              <input type="text" name="description" hidden="" id="description">
+             <textarea id="froala_description"></textarea>
+              <input type="text" name="description" hidden="" id="description" value="">
             </div>
             <!-- Second card -->
 
@@ -152,21 +152,10 @@
 
   </main>
   <!-- Main layout -->
+  @include('includes.froala')
 @endsection
 @section('js')
-    <script type="text/javascript" src="{{url('assets/backend/js/vendor/tinymce/tinymce.min.js')}}"></script>
     <script type="text/javascript">
-        // TinyMCE Initialization
-        tinymce.init({
-            selector:'#post_content',
-            menubar: true,
-            height : "294",
-            init_instance_callback: function(editor) {
-                editor.on('Change', function(e) {
-                  desc();
-                });
-            }
-         });
         $('input[name="category[]"]').click(function () {
           var total=$('input[name="category[]"]:checked').length;
           if(total>3){
@@ -174,10 +163,6 @@
             $(this).prop('checked', false);
           }
         });
-        function desc(){
-            $('#description').val(tinymce.activeEditor.getContent());
-            console.log(tinymce.activeEditor.getContent());
-        }
         $("#address-textarea").on('change keyup paste', function() {
             $('#address').val($('#address-textarea').val());
         });

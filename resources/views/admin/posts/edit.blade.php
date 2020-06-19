@@ -8,6 +8,10 @@
     .card.card-cascade.narrower {
     margin-top: 3.25rem;
 }
+.categories-card{
+            max-height: 300px;
+            overflow: auto;
+        }
 </style>
 @endsection
 @section('content')
@@ -38,8 +42,8 @@
 
             <!-- Second card -->
             <div class="card mb-4">
-              <textarea name="" id="post_content"></textarea>
-              <input type="text" name="description" hidden="" id="description" value="{!!$post->description!!}">
+              <textarea id="froala_description">{!!$post->description!!}</textarea>
+              <input type="text" name="description" hidden="" id="description" value="">
             </div>
             <!-- Second card -->
 
@@ -151,26 +155,10 @@
 
   </main>
   <!-- Main layout -->
+  @include('includes.froala')
 @endsection
 @section('js')
-    <script type="text/javascript" src="{{url('assets/backend/js/vendor/tinymce/tinymce.min.js')}}"></script>
     <script type="text/javascript">
-        // TinyMCE Initialization
-        tinymce.init({
-            selector:'#post_content',
-            menubar: true,
-            height : "294",
-            setup: function (editor) {
-                editor.on('init', function (e) {
-                  editor.setContent("{!!$post->description!!}");
-                });
-              },
-            init_instance_callback: function(editor) {
-                editor.on('Change', function(e) {
-                  desc();
-                });
-            }
-         });
         $('input[name="category[]"]').click(function () {
           var total=$('input[name="category[]"]:checked').length;
           if(total>3){
@@ -194,10 +182,4 @@
         </script>
         @endif
 @endsection
-@section('css')
-    <style type="text/css">
-        .categories-card{
-            max-height: 300px;
-            overflow: auto;
-        }
-    </style>
+

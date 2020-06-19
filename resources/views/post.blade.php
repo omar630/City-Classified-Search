@@ -99,8 +99,8 @@
             <div class="card mb-4">
               <div class="card-body">
                 <div class="md-form mb-0 mt-2">
-                  <textarea name="" id="post_content"></textarea>
-                  <input type="text" name="description" hidden="" id="description">
+                  <textarea id="froala_description"></textarea>
+              <input type="text" name="description" hidden="" id="description" value="">
                 </div>
               </div>
             </div>
@@ -225,25 +225,11 @@
         <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
     </div>
   <!-- Main layout -->
-
-  <!-- SCRIPTS -->
-  <!-- MDB core JavaScript -->
+@include('includes.froala')
 @endsection
 @section('js')
 <script type="text/javascript" src="{{url('assets/MDB/js/mdb.min.js')}}"></script>
- <script type="text/javascript" src="{{url('assets/backend/js/vendor/tinymce/tinymce.min.js')}}"></script>
     <script type="text/javascript">
-        // TinyMCE Initialization
-        tinymce.init({
-            selector:'#post_content',
-            menubar: true,
-            height : "294",
-            init_instance_callback: function(editor) {
-                editor.on('Change', function(e) {
-                  desc();
-                });
-            }
-         });
     $('input[name="category[]"]').click(function () {
       var total=$('input[name="category[]"]:checked').length;
       if(total>3){
