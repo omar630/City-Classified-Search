@@ -22,7 +22,7 @@
                                        <li><a href="{{route('homepage')}}">Home</a></li>
                                             <li><a href="{{route('aboutpage')}}">About</a></li>
                                          <li><a href="{{route('listingpage')}}">Listing</a></li>
-                                        
+
                                          <li><a href="{{route('contactpage')}}">Contact</a></li>
                                     </ul>
                                 </div>
@@ -36,12 +36,12 @@
                                         <li><a href="#">Reasonable Hotel</a></li>
                                         <li><a href="#">Popular Restaurant</a></li>
                                         <li><a href="#">Easy Shopping</a></li>
-                                        <li><a href="#">Night Life</a></li>     
+                                        <li><a href="#">Night Life</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                      
+
                 <div class="footer-bottom">
                     <div class="row d-flex justify-content-between align-items-center">
                         <div class="col-xl-9 col-lg-8">
@@ -64,7 +64,7 @@
                </div>
             </div>
         </div>
-        
+
     <!-- JS here -->
 		<!-- All JS Custom Plugins Link Here here -->
         <script src="{{url('assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
@@ -86,14 +86,14 @@
 		<!-- Nice-select, sticky -->
         <script src="{{url('/assets/js/jquery.nice-select.min.js')}}"></script>
 		<script src="{{url('/assets/js/jquery.sticky.js')}}"></script>
-        
+
         <!-- contact js -->
         <script src="{{url('/assets/js/contact.js')}}"></script>
         <script src="{{url('/assets/js/jquery.form.js')}}"></script>
         <script src="{{url('/assets/js/jquery.validate.min.js')}}"></script>
         <script src="{{url('/assets/js/mail-script.js')}}"></script>
         <script src="{{url('/assets/js/jquery.ajaxchimp.min.js')}}"></script>
-        
-		<!-- Jquery Plugins, main Jquery -->	
+
+		<!-- Jquery Plugins, main Jquery -->
         <script src="{{url('/assets/js/plugins.js')}}"></script>
         <script src="{{url('/assets/js/main.js')}}"></script>

@@ -18,7 +18,7 @@
       <section class="my-5 text-center text-lg-left wow fadeIn" data-wow-delay="0.3s">
 
         <!-- Section heading -->
-        <h2 class="text-center my-5 h1">All posts({{count($posts)}})</h2>
+        <h2 class="text-center my-5 h1">Pending Approvals({{count($posts)}})</h2>
         @foreach($posts as $post)
         <!-- Grid row -->
         <div class="row mt-3">
