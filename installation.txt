@@ -1,0 +1,10 @@
+1) git clone https://github.com/omar630/City-Classified-Search.git
+2)cd City-Classified-Search
+3)composer update
+4)start Xampp => Apache, MySQL
+  i)goto localhost/phpmyadmin/
+  ii)create database with name "cityclassified"
+5) City-Classified-Search> composer update
+6)City-Classified-Search> php artisan serve
+
+access site at localhost:8000
