@@ -21,7 +21,7 @@
         <li>
           <ul class="collapsible collapsible-accordion">
             <li>
-              <a href="{{route('admin.dashboard')}}" class="collapsible-header waves-effect"><i class="w-fa fas fa-tachometer-alt"></i>Dashboard</a>
+              <a href="{{route('admin.dashboard')}}" class="collapsible-header waves-effect"><i class="w-fa fas fa-tachometer-alt"></i> Dashboard</a>
             </li>
             <li>
               <a class="collapsible-header waves-effect arrow-r">
@@ -38,10 +38,13 @@
               </div>
             </li>
             <li>
-              <a href="{{route('admin.profile')}}" class="collapsible-header waves-effect"><i class="w-fa fas fa-user"></i>Profile</a>
+              <a href="{{route('admin.profile')}}" class="collapsible-header waves-effect"><i class="w-fa fas fa-user"></i> Profile</a>
             </li>
             <li>
-              <a href="{{route('category.index')}}" class="collapsible-header waves-effect"><i class="fab fa-microsoft"></i>Categories</a>
+              <a href="{{route('category.index')}}" class="collapsible-header waves-effect"><i class="fab fa-microsoft"></i> Categories</a>
+            </li>
+            <li>
+              <a href="{{route('admin.users')}}" class="collapsible-header waves-effect"><i class="fas fa-user"></i> Users</a>
             </li>
           </ul>
         </li>

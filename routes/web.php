@@ -59,7 +59,7 @@ Route::prefix('admin')->group(function() {
         Route::get('changerole','UserController@changeRole')->name('changerole');
 
         //user edit pages
-        Route::get('user','UserController@index');
+        Route::get('user','UserController@index')->name('admin.users');
 
         Route::resource('category','CategoryController');
     });
