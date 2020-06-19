@@ -16,7 +16,6 @@ use App\Role;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'CommonController@home')->name('homepage');
 
 Route::get('about', 'CommonController@about')->name('aboutpage');
@@ -57,6 +56,11 @@ Route::prefix('admin')->group(function() {
 
         Route::get('profile', 'AdminController@Profile')->name('admin.profile');
         Route::get('post/all', 'AdminController@allPosts')->name('admin.allposts');
+
+        Route::get('changerole','UserController@changeRole')->name('changerole');
+
+        //user edit pages
+        Route::get('user','UserController@index')->name('admin.users');
 
         Route::resource('category','CategoryController');
     });
