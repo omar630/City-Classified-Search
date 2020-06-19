@@ -1,13 +1,13 @@
  @extends('layouts.app')
 @section('content')
 
-       
+
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Material Design Bootstrap</title>
+    <title>City Classified-Admin Posts</title>
     <!-- Font Awesome -->
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{url('assets/MDB/css/mdb.min.css')}}">
 
     <!-- Your custom styles (optional) -->
-  
+
 </head>
 
 
@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-   
+
     <main>
 
         <!-- Hero Start-->
@@ -48,8 +48,8 @@
 <body class="">
 
   <!-- Main Navigation -->
- 
-  
+
+
   <!-- Main Navigation -->
 
   <!-- Main layout -->
@@ -86,7 +86,7 @@
     <option value="1">Hyderabad</option>
     <option value="2">Mumbai</option>
     <option value="3">Delhi</option>
-</select> 
+</select>
 </div>
 <div style="float: left;margin-left: 300px">
 
@@ -97,7 +97,7 @@
     <option value="3">Larry</option>
 </select>
   </div>
- 
+
               </div>
             </div>
             <!-- First card -->
@@ -117,12 +117,12 @@
             <div class="card mb-4">
               <div class="card-body">
                 <div class="md-form mb-0 mt-2">
-                 
+
                   <textarea name="text1"></textarea>
                 </div>
               </div>
             </div>
-            
+
             <!-- Third Card -->
             <!-- Third Card -->
             <div class="card mb-4">
@@ -175,9 +175,9 @@
           <div class="col-lg-4">
 
             <!-- Card -->
-           
+
             <!-- Card -->
-            
+
             <!-- Card -->
             <div class="card card-cascade narrower " >
 
@@ -255,7 +255,7 @@
   </main>
  <div id="back-top" >
         <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
-    </div>       
+    </div>
   <!-- Main layout -->
 
   <!-- SCRIPTS -->
@@ -289,10 +289,10 @@
 
   </script>
 
-@endsection 
+@endsection
 @section('js')
   <script src="{{url("ckeditor/ckeditor.js")}}"></script>
-  
+
   <script>
     CKEDITOR.replace('text1');
   </script>
@@ -301,7 +301,7 @@
   $('.co-owner').prop('disabled', $(this).val().trim() == '');
 }).change();
   </script>
- 
+
 
   @endsection
 

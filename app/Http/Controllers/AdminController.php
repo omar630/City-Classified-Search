@@ -110,7 +110,7 @@ class AdminController extends Controller
     {
         PostCategory::where('post_id',$request->post_id)->delete();
         Post::find($request->id)->delete();
-        return redirect()->route('admin.allposts');
+        return redirect()->route('admin.postsapprove');
     }
 
     public function approvePost(Request $request)
