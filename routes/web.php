@@ -33,6 +33,14 @@ Route::post('savepost','PostController@savepost')->name('savepost');
 
 Route::get('view-post/{id}','PostController@viewPost')->name('viewpost');
 
+Route::get('myposts','PostController@myPosts')->name('myposts');
+
+Route::get('post/edit/{id}','PostController@editPost')->name('editpost');
+Route::post('post/update','PostController@updatePost')->name('updatepost');
+Route::get('post/delete/{id}', 'PostController@deletepost')->name('deletepost');
+
+Route::get('myprofile','CommonController@myProfile')->name('myprofile');
+
 Auth::routes();
 
 Route::get('/home', 'CommonController@home')->name('home');

@@ -3,10 +3,8 @@
   <!-- Material Design Bootstrap -->
   <link rel="stylesheet" href="{{url('assets/backend/css/mdb.min.css')}}">
   <style type="text/css">
-    .card .custom-style{
-        max-height: 50%;
-        max-width: 50%;
-        margin: auto;
+    .post-title{
+      overflow: auto;
     }
   </style>
 @endsection
@@ -18,7 +16,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-9">
-                        <div class="hero-cap text-center pt-50 pb-20">
+                        <div class="hero-cap text-center pt-50 pb-20 post-title">
                             <h2>{!!$post->title!!}</h2>
                         </div>
                     </div>
@@ -28,7 +26,7 @@
         <!--Hero End -->
     <main>
  <!-- Main layout -->
-    <div class="container  pt-120 pb-120">
+    <div class="container">
 
       <!-- Section: Blog v.4 -->
       <section class="mt-5 pb-3 wow fadeIn">
@@ -57,7 +55,7 @@
               </div>
 
               <!-- Post data -->
-              <div class="card-body card-body-cascade text-center" style="margin: auto;width: 30%;margin-top: -1rem;">
+              <div class="card-body card-body-cascade text-center" >
                 <h2><a><strong>{!!$post->title!!}</strong></a></h2>
                 <p>Posted by <a>{{$post['user']->first_name}}</a>, {{Carbon\Carbon::parse($post->created_at)->format('d/m/y')}}</p>
                 @auth
@@ -112,6 +110,12 @@
             <div class="excerpt mt-5 wow fadeIn" data-wow-delay="0.3s">
                 <h6><strong>Description:</strong></h6>
                 {!!$post->description!!}
+                <hr class="mb-5 mt-4">
+                @if($post['contact'] != null || $post['contact'] != '')
+                  <h6><strong>Contact Details:</strong></h6>
+                  <h6><strong>Name:</strong>{{$post['contact'][0]->contact_name}}</h6>
+                  <h6><strong>Mobile:</strong>{{$post['contact'][0]->contact_mobile}}</h6>
+                @endif
               <div class="mt-4 d-flex justify-content-end">
                 @php $array=array('pink','badge-primary','badge-info') @endphp
                 @foreach ($post['categories'] as $category)

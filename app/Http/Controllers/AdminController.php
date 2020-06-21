@@ -67,10 +67,10 @@ class AdminController extends Controller
         return view('admin.posts.approval',['posts' => $posts, 'post_count' => $post_count]);
     }
 
-    public function deletePost(Request $request)
+    public function deletePost($id)
     {
-        PostCategory::where('post_id',$request->post_id)->delete();
-        Post::find($request->id)->delete();
+        PostCategory::where('post_id',$id)->delete();
+        Post::find($id)->delete();
         return redirect()->route('admin.postsapprove');
     }
 
