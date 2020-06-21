@@ -64,43 +64,17 @@ class PostController extends Controller
         $post = Post::where('id',$id)->with('user')->with('categories')->first();
         if(!$post)
             return view('error.404');
+
+        //this will show 404 for unpublished posts
+        if((!Auth::check() && $post->publish_status == 0) || (Auth::check() && $post->user_id != Auth::user()->id)){
+            return view('error.404');
+        }
         return view('post.view',['post' => $post]);
     }
 
     public function savepost(Request $request)
     {
-        $imageName = null;
-        if ($request->hasFile('cover_image')) {
-            $imageName = time().'-'.Auth::user()->first_name.'.'.$request->cover_image->extension();
-            $request->cover_image->move(public_path('images'), $imageName);
-        }
-        $user_id = Auth::user()->id;
-        $post    = Post::create([
-            'user_id'        => $user_id,
-            'title'          => $request->title,
-            'cover_image'    => $imageName,
-            'description'    => $request->description,
-            'address'        => $request->address,
-            'publish_status' => 0,
-            'city'           => $request->city
-        ]);
-
-        if (isset($request->contact_name) && $request->contact_name != '') {
-            ContactDetail::create([
-                'post_id'        => $post->id,
-                'contact_name'   => $request->contact_name,
-                'contact_mobile' => $request->contact_mobile,
-                'contact_email'  => $request->contact_email,
-            ]);
-        }
-
-        foreach ($request->category as $category) {
-            PostCategory::create([
-                'post_id'     => $post->id,
-                'category_id' => $category,
-            ]);
-        }
-        $categories = Category::all();
+        $post = CommonFunctionsController::updatePost($request);
         return redirect()->route('viewpost',[$post->id]);
     }
 
