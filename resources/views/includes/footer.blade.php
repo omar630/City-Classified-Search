@@ -72,6 +72,7 @@
 		<script src="{{url('/assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
         <script src="{{url('/assets/js/popper.min.js')}}"></script>
         <script src="{{url('/assets/js/bootstrap.min.js')}}"></script>
+        <script type="text/javascript" src="{{url('assets/backend/js/mdb.min.js')}}"></script>
 	    <!-- Jquery Mobile Menu -->
         <script src="{{url('/assets/js/jquery.slicknav.min.js')}}"></script>
 
@@ -97,3 +98,13 @@
 		<!-- Jquery Plugins, main Jquery -->
         <script src="{{url('/assets/js/plugins.js')}}"></script>
         <script src="{{url('/assets/js/main.js')}}"></script>
+        <script type="text/javascript" src="{{url('assets/backend/js/modules/toastr.js')}}"></script>
+        @if(Session::has('message'))
+        <script type="text/javascript">
+          @if(Session::get('response') == 1)
+            toastr.success('{{Session::get('message')}}');
+          @else
+            toastr.error('{{Session::get('message')}}');
+          @endif
+        </script>
+        @endif
