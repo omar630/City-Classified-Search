@@ -39,9 +39,7 @@ Route::get('post/edit/{id}','PostController@editPost')->name('editpost');
 Route::post('post/update','PostController@updatePost')->name('updatepost');
 Route::get('post/delete/{id}', 'PostController@deletepost')->name('deletepost');
 
-Route::get('profile','CommonController@myProfile')->name('myprofile');
-
-Route::post('profile','CommonController@updateProfile')->name('udpateprofile');
+Route::get('myprofile','CommonController@myProfile')->name('myprofile');
 
 Auth::routes();
 

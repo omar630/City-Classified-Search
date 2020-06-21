@@ -21,13 +21,3 @@
   <script type="text/javascript" src="{{url('assets/backend/js/bootstrap.js')}}"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="{{url('assets/backend/js/mdb.min.js')}}"></script>
-  <script type="text/javascript" src="{{url('assets/backend/js/modules/toastr.js')}}"></script>
-  @if(Session::has('message'))
-    <script type="text/javascript">
-      @if(Session::get('response') == 1)
-        toastr.success('{{Session::get('message')}}');
-      @else
-        toastr.error('{{Session::get('message')}}');
-      @endif
-    </script>
-  @endif

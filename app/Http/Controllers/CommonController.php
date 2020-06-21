@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
-use Session;
 
 use App\Category;
-use App\User;
 
 class CommonController extends Controller
 {
@@ -38,26 +35,7 @@ class CommonController extends Controller
     {
         $user_id = Auth::user()->id;
         $user = User::find($user_id);
-        return view('profile',['user' => $user]);
-    }
-
-    public function updateProfile(Request $request)
-    {
-        $user = User::find($request->user_id);
-        $user->update([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email
-        ]);
-        if($user){
-            Session::flash('message', 'Profile updated');
-            Session::flash('response', 1);
-        }
-        else{
-            Session::flash('message', 'some error ocurred please try again');
-            Session::flash('response', 0);
-        }
-        return redirect()->back();
+        return view('profile','user' => $user);
     }
 
 
