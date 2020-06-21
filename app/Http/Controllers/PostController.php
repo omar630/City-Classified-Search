@@ -45,7 +45,7 @@ class PostController extends Controller
             $posts->where(function ($query) use ($request) {
                 $query->where('title', 'like', '%' . $request->search_query . '%');
                 $query->orWhere('description', 'like', '%' . $request->search_query . '%');
-            });
+            })->where('publish_status',1);
         }
         $post_count = $posts->count();
         $posts = $posts->paginate(6);
@@ -61,12 +61,11 @@ class PostController extends Controller
 
     public function viewPost($id)
     {
-        $post = Post::where('id',$id)->with('user')->with('categories')->first();
+        $post = Post::where('id',$id)->with('user')->with('categories')->with('contact')->first();
         if(!$post)
             return view('error.404');
-
         //this will show 404 for unpublished posts
-        if((!Auth::check() && $post->publish_status == 0) || (Auth::check() && $post->user_id != Auth::user()->id)){
+        if((!Auth::check() && $post->publish_status == 0) || (Auth::check() && $post->user_id != Auth::user()->id && $post->publish_status = 0)){
             return view('error.404');
         }
         return view('post.view',['post' => $post]);
@@ -80,7 +79,7 @@ class PostController extends Controller
 
     public function myPosts(Request $request)
     {
-        $posts = Post::latest();
+        $posts = Post::where('user_id',Auth::user()->id)->latest();
         $post_count = $posts->count();
         $posts = $posts->paginate(10);
         return view('post.mypost',['posts' => $posts, 'post_count' => $post_count]);
