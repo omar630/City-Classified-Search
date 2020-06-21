@@ -111,12 +111,12 @@
                 <h6><strong>Description:</strong></h6>
                 {!!$post->description!!}
                 <hr class="mb-5 mt-4">
-                @if($post['contact'] != null || $post['contact'] != '')
+                @if(count($post['contact'])>0)
                   <h6><strong>Contact Details:</strong></h6>
                   <h6><strong>Name:</strong>{{$post['contact'][0]->contact_name}}</h6>
                   <h6><strong>Mobile:</strong>{{$post['contact'][0]->contact_mobile}}</h6>
                 @endif
-              <div class="mt-4 d-flex justify-content-end">
+                <div class="mt-4 d-flex justify-content-end">
                 @php $array=array('pink','badge-primary','badge-info') @endphp
                 @foreach ($post['categories'] as $category)
                     <span class="badge mx-1 {{$array[array_rand($array)]}}">{{$category->category_name}}</span>
