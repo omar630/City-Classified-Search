@@ -15,6 +15,7 @@
 
     // Set request type.
     imageUploadMethod: 'POST',
+    toolbarSticky: false,
     imageStyles: {
             class1: 'img-responsive',
             class2: 'center-fr-image'

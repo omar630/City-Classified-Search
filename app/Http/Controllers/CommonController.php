@@ -31,6 +31,13 @@ class CommonController extends Controller
         return view('post');
     }
 
+    public function myProfile()
+    {
+        $user_id = Auth::user()->id;
+        $user = User::find($user_id);
+        return view('profile','user' => $user);
+    }
+
 
 
     /**

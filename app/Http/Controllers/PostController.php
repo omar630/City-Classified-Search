@@ -74,13 +74,37 @@ class PostController extends Controller
 
     public function savepost(Request $request)
     {
+        $post = CommonFunctionsController::savePost($request,Auth::user()->id);
+        return redirect()->route('viewpost',[$post->id]);
+    }
+
+    public function myPosts(Request $request)
+    {
+        $posts = Post::latest();
+        $post_count = $posts->count();
+        $posts = $posts->paginate(10);
+        return view('post.mypost',['posts' => $posts, 'post_count' => $post_count]);
+    }
+
+    public function editPost(Request $request)
+    {
+
+        $post = Post::find($request->id);
+        $categories = Category::all();
+        return view('post.edit',['post'=>$post, 'categories' => $categories]);
+    }
+
+    public function updatePost(Request $request)
+    {
         $post = CommonFunctionsController::updatePost($request);
         return redirect()->route('viewpost',[$post->id]);
     }
 
-    public function imageUploadPost(Request $request)
+    public function deletePost(Request $request)
     {
-
+        PostCategory::where('post_id',$request->id)->delete();
+        Post::find($request->id)->delete();
+        return redirect()->route('myposts');
     }
 
     /**

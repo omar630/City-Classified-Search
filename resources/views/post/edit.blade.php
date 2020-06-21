@@ -28,7 +28,7 @@
         </div>
     </div>
     <main>
-<form method="post" action="{{route('savepost')}}" enctype="multipart/form-data">
+<form method="post" action="{{route('updatepost')}}" enctype="multipart/form-data">
   @csrf
         <!-- Hero Start-->
         <div class="hero-area2  slider-height2 hero-overly2 d-flex align-items-center ">
@@ -64,8 +64,9 @@
   <div class="card mb-4 post-title-panel">
               <div class="card-body">
                 <div class="md-form mt-1 mb-0">
-                  <input type="text" id="form1" class="form-control" value="" name="title">
+                  <input type="text" id="form1" class="form-control" value="{{$post->title}}" name="title">
                   <label class="form-check-label" for="form1" class="">Post title<sup><i class="fas fa-asterisk asterisk"></i></sup></label>
+                  <input type="number" name="post_id" value="{{$post->id}}" hidden="">
                 </div>
               </div>
             </div>
@@ -75,9 +76,9 @@
                 <div class="select-itms" style="margin-right: 120px">
                   <select name="city" class="form-control" style="margin: inherit;" required="">
                       <option value="">Select an City</option>
-                      <option value="hyderabad">Hyderabad</option>
-                      <option value="mumbai">Mumbai</option>
-                      <option value="delhi">Delhi</option>
+                      <option value="hyderabad" @if($post->city == 'hyderabad') selected="true" @endif>Hyderabad</option>
+                      <option value="mumbai" @if($post->city == 'mumbai') selected="true" @endif>Mumbai</option>
+                      <option value="delhi" @if($post->city == 'delhi') selected="true" @endif>Delhi</option>
                   </select>
                 </div>
               </div>
@@ -96,8 +97,8 @@
             <div class="card mb-4">
               <div class="card-body">
                 <div class="md-form mb-0 mt-2">
-                  <textarea id="froala_description"></textarea>
-              <input type="text" name="description" hidden="" id="description" value="">
+                  <textarea id="froala_description">{!!$post->description!!}</textarea>
+                  <input type="text" name="description" hidden="" id="description" value="{!!$post->description!!}">
                 </div>
               </div>
             </div>
@@ -107,7 +108,7 @@
             <div class="card mb-4">
               <div class="card-body">
                 <div class="md-form mb-0 mt-2">
-                  <textarea type="text" id="address" class="md-textarea form-control" rows="3" name="address"></textarea>
+                  <textarea type="text" id="address" class="md-textarea form-control" rows="3" name="address">{{$post->address}}</textarea>
                   <label class="form-check-label" for="address">Address</label>
                 </div>
               </div>
@@ -126,19 +127,19 @@
                     <!--Body -->
                     <div class="md-form">
                       <i class="fas fa-user prefix grey-text"></i>
-                      <input type="text" id="contact_name" class="form-control" name="contact_name">
+                      <input type="text" id="contact_name" class="form-control" name="contact_name" value="{{$post['contact'][0]->contact_name ?? ''}}">
                       <label for="contact_name">Name</label>
                     </div>
 
                     <div class="md-form">
                       <i class="fas fa-envelope prefix grey-text"></i>
-                      <input type="text" id="contact_email" class="form-control" name="contact_email">
+                      <input type="text" id="contact_email" class="form-control" name="contact_email" value="{{$post['contact'][0]->contact_email ?? '' }}">
                       <label for="contact_email">Email</label>
                     </div>
 
                     <div class="md-form">
                       <i class="fas fa-mobile-alt prefix grey-text"></i>
-                      <input type="text" id="contact_mobile" class="form-control" name="contact_mobile">
+                      <input type="text" id="contact_mobile" class="form-control" name="contact_mobile" value="{{$post['contact'][0]->contact_mobile ?? ''}}">
                       <label for="contact_mobile">Mobile</label>
                     </div>
                   </div>
@@ -170,7 +171,7 @@
               <div class="card-body card-body-cascade categories-card">
                 @foreach($categories as $category)
                     <fieldset class="form-check mb-4">
-                      <input class="form-check-input" type="checkbox" name="category[]" id="{{$category->category_name}}" value="{{$category->id}}">
+                      <input class="form-check-input" type="checkbox" name="category[]" id="{{$category->category_name}}" value="{{$category->id}}" @if(in_array($category->id,$post->categories->pluck('id')->toArray()))checked="true"@endif>
                       <label class="form-check-label" for="{{$category->category_name}}">{{$category->category_name}}</label>
                     </fieldset>
                 @endforeach
@@ -234,9 +235,25 @@
         $(this).prop('checked', false);
       }
     });
-    $("#address-textarea").on('change keyup paste', function() {
-        $('#address').val($('#address-textarea').val());
-    });
+    function desc(){
+            $('#description').val(tinymce.activeEditor.getContent());
+            console.log(tinymce.activeEditor.getContent());
+        }
+        $("#address-textarea").on('change keyup paste', function() {
+            $('#address').val($('#address-textarea').val());
+        });
+    function uploadImage(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#preview')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
   </script>
   @endsection
 

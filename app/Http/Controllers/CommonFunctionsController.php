@@ -13,18 +13,22 @@ use Auth;
 
 class CommonFunctionsController extends Controller
 {
-    public static function uploadImage($image,$user_id)
+    public static function uploadImage($image)
     {
         $imageName = '';
-
-        $imageName = time().'-'.User::find($user_id)->first_name.'.'.$image->extension();
-        $image->move(public_path('images'), $imageName);
+        if($image->extension() == 'jpeg' || $image->extension() == 'jpg' || $image->extension() == 'png' || $image->extension() == 'gif'){
+            $imageName = time().'.'.$image->extension();
+            $image->move(public_path('images'), $imageName);
+        }
         return $imageName;
     }
 
     public static function savePost(Request $request,$user_id)
     {
-        $imageName = self::uploadImage($request->file('cover_image'),$user_id);
+        $imageName = '';
+        if($request->cover_image != '' || $request->cover_image != null){
+            $imageName = self::uploadImage($request->file('cover_image'));
+        }
         $user_id = $user_id;
         $post    = Post::create([
             'user_id'        => $user_id,
@@ -58,21 +62,25 @@ class CommonFunctionsController extends Controller
     public static function updatePost($request)
     {
         $post = Post::where('id',$request->post_id)->first();
-        $imageName = self::uploadImage($request->cover_image,$post->user_id);
-            $post->update([
-                'title' => $request->title,
-                'description' => $request->description,
-                'address' => $request->address,
-                'cover_image'    => $imageName
+        $imageName = $post->cover_image;
+        if($request->cover_image != '' || $request->cover_image != null){
+            $imageName = self::uploadImage($request->cover_image);
+        }
+        $post->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'address' => $request->address,
+            'cover_image'    => $imageName,
+            'city' => $request->city
+        ]);
+        if(isset($request->contact_name) && $request->contact_name != ''){
+            $contact = ContactDetail::where('post_id',$request->post_id);
+            $contact->updateOrCreate([
+                'post_id' => $request->post_id,
+                'contact_name' => $request->contact_name,
+                'contact_mobile' => $request->contact_mobile,
+                'contact_email' => $request->contact_email
             ]);
-            if(isset($request->contact_name) && $request->contact_name != ''){
-                $contact = ContactDetail::where('post_id',$request->post_id);
-                $contact->updateOrCreate([
-                    'post_id' => $request->post_id,
-                    'contact_name' => $request->contact_name,
-                    'contact_mobile' => $request->contact_mobile,
-                    'contact_email' => $request->contact_email
-                ]);
         }
         PostCategory::where('post_id',$request->post_id)->delete();
         if(isset($request->category)){
