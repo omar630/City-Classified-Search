@@ -57,7 +57,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="single-location mb-30">
                             <div class="location-img">
-                                <img src="assets/img/gallery/location1.png" alt="">
+                                <img src="assets/img/gallery/charminar.jpg" alt="">
                             </div>
                             <div class="location-details">
                                 <p>Hyderabad</p>
@@ -68,7 +68,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="single-location mb-30">
                             <div class="location-img">
-                                <img src="assets/img/gallery/location2.png" alt="">
+                                <img src="assets/img/gallery/taj.jpg" alt="" style="height: 255px">
                             </div>
                             <div class="location-details">
                                 <p>Mumbai</p>
@@ -79,7 +79,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="single-location mb-30">
                             <div class="location-img">
-                                <img src="assets/img/gallery/location3.png" alt="">
+                                <img src="assets/img/gallery/tajmahal.jpg" alt=""style="height: 255px">
                             </div>
                             <div class="location-details">
                                 <p>Delhi</p>
@@ -121,14 +121,14 @@
                         </div>
                     </div>
                 </div>
-                <!-- More Btn -->
+               {{--  <!-- More Btn -->
                 <div class="row justify-content-center">
                     <div class="room-btn pt-20">
                         <a href="catagori.html" class="btn view-btn1">View All Places</a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Popular Locations End -->
         <!-- Services Area Start -->
         <div class="services-area pt-150 pb-150 section-bg" data-background="assets/img/gallery/section_bg02.jpg">
@@ -150,7 +150,7 @@
                             </div>
                             <div class="services-cap">
                                 <h5><a href="#">1. Choose a Category</a></h5>
-                                <p>incidid labore lore magna aliqua uisipsum suspendis loris.</p>
+                                
                             </div>
                             <!-- Shpape -->
                             <img class="shape1 d-none d-lg-block" src="assets/img/icon/serices1.png" alt="">
@@ -163,7 +163,7 @@
                             </div>
                             <div class="services-cap">
                                 <h5><a href="#">2. what you want</a></h5>
-                                <p>incidid labore lore magna aliqua uisipsum suspendis loris.</p>
+                               
                             </div>
                             <img class="shape2 d-none d-lg-block" src="assets/img/icon/serices2.png" alt="">
                         </div>
@@ -175,7 +175,7 @@
                             </div>
                             <div class="services-cap">
                                 <h5><a href="#">3. Go out & Explore</a></h5>
-                                <p>incidid labore lore magna aliqua uisipsum suspendis loris.</p>
+                               
                             </div>
                         </div>
                     </div>
@@ -290,7 +290,7 @@
         </div>
         <!-- peoples-visit End -->
         <!-- Testimonial Start -->
-        <div class="testimonial-area testimonial-padding">
+       {{--  <div class="testimonial-area testimonial-padding">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -346,7 +346,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Testimonial End -->
        {{--  <!-- Subscribe Area Start -->
         <div class="subscribe-area section-bg pt-150 pb-150" data-background="assets/img/gallery/section_bg04.jpg">
@@ -373,7 +373,7 @@
         </div>
         <!-- Subscribe Area End --> --}}
         <!-- Blog Ara Start -->
-        <div class="home-blog-area section-padding4">
+        {{-- <div class="home-blog-area section-padding4">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -426,7 +426,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Blog Ara End -->
 
     </main>
