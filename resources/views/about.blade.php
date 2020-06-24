@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-  
+
     <main>
         <!-- Hero Start-->
         <div class="hero-area2  slider-height2 hero-overly2 d-flex align-items-center ">
@@ -16,272 +16,143 @@
         </div>
         <!--Hero End -->
         <!-- About Details Start -->
-        <div class="about-details section-padding2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-md-10">
-                        <!-- Section Tittle -->
-                        <div class="section-tittle section-tittle5 mb-80">
-                            <span>About our company</span>
-                            <h2>Making sure that our products exceed expectations 
-                                for quality, style and performance.</h2>
-                        </div> 
-                    </div>
-                </div>
-                <div class="row justify-content-between">
-                    <div class="col-lg-4">
-                        <h3>Our Mission</h3>
-                        <p>Brook presents your services with flexible nienti and multipurpose layouts. You can select vorite layouts & elements for particular projects with unlimited mizationi possibilities.</p>
-                    </div>
-                    <div class="col-lg-5">
-                        <h3>Plan Overview</h3>
-                        <p>Brook presents your services with flexible nienti and multipurpose layouts. You can select vorite layouts & elements for particular projects with unlimited mizationi possibilities.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- About Details End -->
-        <!-- peoples-visit Start -->
-        <div class="peoples-visit dining-padding-top">
-            <!-- Single Left img -->
-            <div class="single-visit left-img">
-                <div class="container">
-                    <div class="row justify-content-end">
-                        <div class="col-lg-8">
-                            <div class="visit-caption">
-                                <span>We are offering for you</span>
-                                <h3>Every Month, Millions of People 
-                                    visit this site We’ve Built.</h3>
-                                <p>Unlike what its name implies, dry cleaning is not actually a 'dry' process. Clothes are soaked in a different solvent.</p>
-                                <!--Single Visit categories -->
-                                <div class="visit-categories mb-40">
-                                    <div class="visit-location">
-                                        <span class="flaticon-travel"></span>
-                                    </div>
-                                    <div class="visit-cap">
-                                        <h4>Great places in the world</h4>
-                                        <p>Unlike what its name implies, dry cleaning is not actu  process. Clothes soaked differentent.
-                                        </p>
-                                    </div>
-                                </div>
-                                <!--Single Visit categories -->
-                                <div class="visit-categories">
-                                    <div class="visit-location">
-                                        <span class="flaticon-work"></span>
-                                    </div>
-                                    <div class="visit-cap">
-                                        <h4>Biggest category listing</h4>
-                                        <p>Unlike what its name implies, dry cleaning is not actu  process. Clothes soaked differentent.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- peoples-visit End -->
-        <!-- Testimonial Start -->
-        <div class="testimonial-area testimonial-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- Section Tittle -->
-                        <div class="section-tittle text-center mb-80">
-                            <span>Our client testimonials</span>
-                            <h2>What our client say</h2>
-                        </div> 
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-lg-11 col-md-11">
-                        <div class="h1-testimonial-active">
-                            <!-- Single Testimonial -->
-                            <div class="single-testimonial text-center">
-                                <!-- Testimonial Content -->
-                                <div class="testimonial-caption ">
-                                    <div class="testimonial-top-cap">
-                                        <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis por incididunt ut labore et dolore mas. </p>
-                                    </div>
-                                    <!-- founder -->
-                                    <div class="testimonial-founder d-flex align-items-center justify-content-center mb-30">
-                                        <div class="founder-img">
-                                            <img src="assets/img/testmonial/Homepage_testi.png" alt="">
-                                        </div>
-                                        <div class="founder-text">
-                                            <span>Oliva jems</span>
-                                            <p>UIX designer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Testimonial -->
-                            <div class="single-testimonial text-center">
-                                <!-- Testimonial Content -->
-                                <div class="testimonial-caption ">
-                                    <div class="testimonial-top-cap">
-                                        <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis por incididunt ut labore et dolore mas. </p>
-                                    </div>
-                                    <!-- founder -->
-                                    <div class="testimonial-founder d-flex align-items-center justify-content-center mb-30">
-                                        <div class="founder-img">
-                                            <img src="assets/img/testmonial/Homepage_testi.png" alt="">
-                                        </div>
-                                        <div class="founder-text">
-                                            <span>Oliva jems</span>
-                                            <p>UIX designer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
-        <!-- Services Area Start -->
-        <div class="services-area pt-150 pb-150 section-bg" data-background="assets/img/gallery/section_bg02.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- Section Tittle -->
-                        <div class="section-tittle section-tittle2 text-center mb-80">
-                            <span>Easy to explore</span>
-                            <h2>How It Works</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-between">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-services text-center mb-50">
-                            <div class="services-icon">
-                                <span class="flaticon-list"></span>
-                            </div>
-                            <div class="services-cap">
-                                <h5><a href="#">1. Choose a Category</a></h5>
-                                <p>incidid labore lore magna aliqua uisipsum suspendis loris.</p>
-                            </div>
-                            <!-- Shpape -->
-                            <img class="shape1 d-none d-lg-block" src="assets/img/icon/serices1.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-services text-center mb-50">
-                            <div class="services-icon">
-                                <span class="flaticon-problem"></span>
-                            </div>
-                            <div class="services-cap">
-                                <h5><a href="#">2. what you want</a></h5>
-                                <p>incidid labore lore magna aliqua uisipsum suspendis loris.</p>
-                            </div>
-                            <img class="shape2 d-none d-lg-block" src="assets/img/icon/serices2.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-services text-center mb-50">
-                            <div class="services-icon">
-                                <span class="flaticon-respect"></span>
-                            </div>
-                            <div class="services-cap">
-                                <h5><a href="#">3. Go out & Explore</a></h5>
-                                <p>incidid labore lore magna aliqua uisipsum suspendis loris.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Services Area End -->
-        <!-- Popular Locations Start -->
-        <div class="popular-location section-padding30">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- Section Tittle -->
-                        <div class="section-tittle text-center mb-80">
-                            <span>Most visited places</span>
-                            <h2>Popular Cities</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-location mb-30">
-                            <div class="location-img">
-                                <img src="assets/img/gallery/location1.png" alt="">
-                            </div>
-                            <div class="location-details">
-                                <p>Hyderabad</p>
-                                <a href="#" class="location-btn">65 <i class="ti-plus"></i> Location</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-location mb-30">
-                            <div class="location-img">
-                                <img src="assets/img/gallery/location2.png" alt="">
-                            </div>
-                            <div class="location-details">
-                                <p>Mumbai</p>
-                                <a href="#" class="location-btn">60 <i class="ti-plus"></i> Location</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-location mb-30">
-                            <div class="location-img">
-                                <img src="assets/img/gallery/location3.png" alt="">
-                            </div>
-                            <div class="location-details">
-                                <p>Delhi</p>
-                                <a href="#" class="location-btn">50 <i class="ti-plus"></i> Location</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-location mb-30">
-                            <div class="location-img">
-                                <img src="assets/img/gallery/location4.png" alt="">
-                            </div>
-                            <div class="location-details">
-                                <p>Italy</p>
-                                <a href="#" class="location-btn">28 <i class="ti-plus"></i> Location</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-location mb-30">
-                            <div class="location-img">
-                                <img src="assets/img/gallery/location5.png" alt="">
-                            </div>
-                            <div class="location-details">
-                                <p>Nepal</p>
-                                <a href="#" class="location-btn">99 <i class="ti-plus"></i> Location</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-location mb-30">
-                            <div class="location-img">
-                                <img src="assets/img/gallery/location6.png" alt="">
-                            </div>
-                            <div class="location-details">
-                                <p>indonesia</p>
-                                <a href="#" class="location-btn">78 <i class="ti-plus"></i> Location</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Popular Locations End -->
 
-    </main>
-   
+  <!-- Main Layout -->
+  <main>
+
+    <div class="container">
+
+      <!-- Section: Team v.3 -->
+      <section class="section team-section wow fadeIn" data-wow-delay="0.3s">
+
+        <!-- Section heading -->
+        <h2 class="text-center my-5 h1">Our amazing team</h2>
+
+        <!-- Section description -->
+        <p class="text-center mb-5 w-responsive mx-auto">Our team's mission is to show the Various places in the City,So that users can view the required locations without any compromise</p>
+
+        <!-- Grid row -->
+        <div class="row mb-lg-4 text-center text-md-left">
+
+          <!-- Grid column -->
+          <div class="col-lg-6 col-md-12 mb-4">
+
+            <div class="col-md-6 float-left">
+              <div class="avatar mx-auto">
+                <img src="assets/img/gallery/omar.jpg" class="z-depth-1" alt="First sample avatar image" style="width: 200px;height: 259px;">
+              </div>
+            </div>
+
+            <div class="col-md-6 float-right">
+              <h4 class="mt-md-0 mt-4"><strong>Mohammed Omar</strong></h4>
+              <h6 class="font-weight-bold grey-text mb-4">Web Developer</h6>
+              <p class="grey-text">Experienced Web Developer with a demonstrated history of working in the computer software industry. Skilled in PHP, jQuery, Laravel, MySQL and Core Java. persuing computer Science engineering(CSE) from CMR Engineering COllege. </p>
+
+              <!-- Facebook -->
+              <a class="p-2 m-2 fa-lg fb-ic" href="https://www.linkedin.com/in/omar739/" target="_blank"><i class="fab fa-linkedin-in"> </i></a>
+              <!-- Twitter -->
+              <a class="p-2 m-2 fa-lg tw-ic" href="https://twitter.com/Md_omar7" target="_blank"><i class="fab fa-twitter" > </i></a>
+              <!-- Dribbble -->
+              <a class="p-2 m-2 fa-lg git-ic" href="https://github.com/omar630" target="_blank"><i class="fab fa-github"> </i></a>
+            </div>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-lg-6 col-md-12 mb-4">
+
+            <div class="col-md-6 float-left">
+              <div class="avatar mx-auto">
+                <img src="assets/img/gallery/jaitej.jpg "class="z-depth-1" alt="Second sample avatar image" style="height: 259px;width: 191px;">
+              </div>
+            </div>
+
+            <div class="col-md-6 float-right">
+              <h4 class="mt-md-0 mt-4"><strong>Gade Jaitej Reddy</strong></h4>
+              <h6 class="font-weight-bold grey-text mb-4">Web Designer</h6>
+              <p class="grey-text">Experienced Web Developer with a demonstrated history of working in the computer software industry. Skilled in PHP, Web Design, MySQL, Adnroid and Core Java. persuing computer Science engineering(CSE) from CMR Engineering COllege.</p>
+
+              <!-- Facebook -->
+              <a   href="https://www.facebook.com/profile.php?id=100006973177247" target="_blank"class="p-2 m-2 fa-lg fb-ic"><i class="fab fa-facebook-f" > </i></a>
+              <!-- YouTube -->
+              <a href="https://www.linkedin.com/in/jaitej-reddy-gade-2735911b0"  target="_blank"class="p-2 m-2 fa-lg li-ic"><i class="fab fa-linkedin-in"> </i></a>
+              <!-- Instagram -->
+              <a href="https://github.com/jaitejfeb4" target="_blank"class="p-2 m-2 fa-lg ins-ic"><i class="fab fa-github"> </i></a>
+            </div>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+        <!-- Grid row -->
+        <div class="row text-center text-md-left">
+
+          <!-- Grid column -->
+          <div class="col-lg-6 col-md-12 mb-lg-0 mb-4">
+
+            <div class="col-md-6 float-left">
+              <div class="avatar mx-auto">
+                <img src="assets/img/gallery/manikanth.jpg" class="z-depth-1" alt="Fourth sample avatar image">
+              </div>
+            </div>
+
+            <div class="col-md-6 float-right">
+              <h4 class="mt-md-0 mt-4"><strong>Bandlamudi Manikanth</strong></h4>
+              <h6 class="font-weight-bold grey-text mb-4">Content Writer</h6>
+              <p class="grey-text">Good in Communication and maintaining Connections.like to explore technologies.Persuing computer Science engineering(CSE) from CMR Engineering COllege.</p>
+
+              <!-- Facebook -->
+
+              <a href="https://www.facebook.com/manikanth9550" target="_blank"class="p-2 m-2 fa-lg fb-ic"><i class="fab fa-facebook-f"> </i></a>
+              <!-- Twitter -->
+              <a href="https://twitter.com/manikanth9550" target="_blank" class="p-2 m-2 fa-lg tw-ic"><i class="fab fa-twitter"> </i></a>
+              <!-- GitHub -->
+              <a href="https://github.com/manikanth8125"target="_blank" class="p-2 m-2 fa-lg git-ic"><i class="fab fa-github"> </i></a>
+            </div>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-lg-6 col-md-12">
+            <div class="col-md-6 float-left">
+              <div class="avatar mx-auto">
+                <img src="assets/img/gallery/abhishek.jpg" class="z-depth-1" alt="Fifth sample avatar image">
+              </div>
+            </div>
+
+            <div class="col-md-6 float-right">
+              <h4 class="mt-md-0 mt-4"><strong>Chintamani Abhishek</strong></h4>
+              <h6 class="font-weight-bold grey-text mb-4">Web Designer</h6>
+              <p class="grey-text">Experienced Web Developer with a demonstrated history of working in the computer software industry. Skilled in PHP and MySQL. persuing computer Science engineering(CSE) from CMR Engineering College.</p>
+
+              <!-- Google + -->
+              <a href="https://twitter.com/AbhishekRoonie?s=08" target="_blank" class="p-2 m-2 fa-lg tw-ic"><i class="fab fa-twitter"> </i></a>
+              <!-- LinkedIn -->
+              <a target="_blank" class="p-2 m-2 fa-lg li-ic"><i class="fab fa-linkedin-in"> </i></a>
+              <!-- Email -->
+              <a href="https://github.com/abhishek801" target="_blank"class="p-2 m-2 fa-lg git-ic"><i class="fab fa-github"> </i></a>
+            </div>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+      </section>
+      <!-- Section: Team v.3 -->
+
+      <hr class="my-5">
+       @include('popular_cities')
+  </main>
+  <!-- Main Layout -->
+
     <!-- Scroll Up -->
     <div id="back-top" >
         <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
     </div>
-@endsection  
+@endsection

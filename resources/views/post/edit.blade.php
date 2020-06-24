@@ -194,9 +194,9 @@
               <!-- Card content -->
               <div class="card-body card-body-cascade">
 
-                <p><i class="fas fa-flag mr-1" aria-hidden="true"></i> Status: <strong>Draft</strong></p>
+               {{--  <p><i class="fas fa-flag mr-1" aria-hidden="true"></i> Status: <strong>Draft</strong></p> --}}
                 <p><i class="far fa-eye mr-1" aria-hidden="true"></i> Visibility <strong>Public</strong></p>
-                <p><i class="fas fa-archive mr-1 mr-1" aria-hidden="true"></i> Revisions: <strong>2</strong></p>
+               {{--  <p><i class="fas fa-archive mr-1 mr-1" aria-hidden="true"></i> Revisions: <strong>2</strong></p> --}}
                 <p><i class="far fa-calendar-alt mr-1" aria-hidden="true"></i> Publish: <strong> Published after approval</strong></p>
                 <div class="text-right">
                   <button class="btn btn-flat waves-effect">Discard</button>
