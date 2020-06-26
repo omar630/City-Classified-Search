@@ -46,7 +46,7 @@
             <div class="col-md-6 float-right">
               <h4 class="mt-md-0 mt-4"><strong>Mohammed Omar</strong></h4>
               <h6 class="font-weight-bold grey-text mb-4">Web Developer</h6>
-              <p class="grey-text">Experienced Web Developer with a demonstrated history of working in the computer software industry. Skilled in PHP, jQuery, Laravel, MySQL and Core Java. persuing computer Science engineering(CSE) from CMR Engineering COllege. </p>
+              <p class="grey-text">Experienced Web Developer with a demonstrated history of working in the computer software industry. Skilled in PHP, jQuery, Laravel, MySQL and Core Java. pursuing computer Science engineering(CSE) from CMR Engineering College. </p>
 
               <!-- Facebook -->
               <a class="p-2 m-2 fa-lg fb-ic" href="https://www.linkedin.com/in/omar739/" target="_blank"><i class="fab fa-linkedin-in"> </i></a>
@@ -71,7 +71,7 @@
             <div class="col-md-6 float-right">
               <h4 class="mt-md-0 mt-4"><strong>Gade Jaitej Reddy</strong></h4>
               <h6 class="font-weight-bold grey-text mb-4">Web Designer</h6>
-              <p class="grey-text">Experienced Web Developer with a demonstrated history of working in the computer software industry. Skilled in PHP, Web Design, MySQL, Adnroid and Core Java. persuing computer Science engineering(CSE) from CMR Engineering COllege.</p>
+              <p class="grey-text">Experienced Web Developer with a demonstrated history of working in the computer software industry. Skilled in PHP, Web Design, MySQL, Adnroid and Core Java. pursuing computer Science engineering(CSE) from CMR Engineering College.</p>
 
               <!-- Facebook -->
               <a   href="https://www.facebook.com/profile.php?id=100006973177247" target="_blank"class="p-2 m-2 fa-lg fb-ic"><i class="fab fa-facebook-f" > </i></a>
@@ -102,7 +102,7 @@
             <div class="col-md-6 float-right">
               <h4 class="mt-md-0 mt-4"><strong>Bandlamudi Manikanth</strong></h4>
               <h6 class="font-weight-bold grey-text mb-4">Content Writer</h6>
-              <p class="grey-text">Good in Communication and maintaining Connections.like to explore technologies.Persuing computer Science engineering(CSE) from CMR Engineering COllege.</p>
+              <p class="grey-text">Good in Communication and maintaining Connections.like to explore technologies.pursuing computer Science engineering(CSE) from CMR Engineering College.</p>
 
               <!-- Facebook -->
 
@@ -127,7 +127,7 @@
             <div class="col-md-6 float-right">
               <h4 class="mt-md-0 mt-4"><strong>Chintamani Abhishek</strong></h4>
               <h6 class="font-weight-bold grey-text mb-4">Web Designer</h6>
-              <p class="grey-text">Experienced Web Developer with a demonstrated history of working in the computer software industry. Skilled in PHP and MySQL. persuing computer Science engineering(CSE) from CMR Engineering College.</p>
+              <p class="grey-text">Experienced Web Developer with a demonstrated history of working in the computer software industry. Skilled in PHP and MySQL. pursuing computer Science engineering(CSE) from CMR Engineering College.</p>
 
               <!-- Google + -->
               <a href="https://twitter.com/AbhishekRoonie?s=08" target="_blank" class="p-2 m-2 fa-lg tw-ic"><i class="fab fa-twitter"> </i></a>

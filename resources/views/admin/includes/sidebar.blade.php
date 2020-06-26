@@ -4,7 +4,7 @@
         <!-- Logo -->
         <li class="logo-sn waves-effect py-3">
           <div class="text-center">
-            <a href="#" class="pl-0"><img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png"></a>
+            <a href="#" class="pl-0" style="background-color: darkblue; "><img src="{{url('assets/img/logo/logo.png')}}"></a>
           </div>
         </li>
 

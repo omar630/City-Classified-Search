@@ -236,33 +236,6 @@
                                         </div>
                                         <!-- Card -->
                                     </div>
-                                        {{-- <div class="col-lg-6 ">
-                                            <div class="single-listing mb-30">
-                                                <div class="list-img">
-                                                    <img src="assets/img/gallery/list1.png" alt="">
-                                                    <!-- <span>Open</span> -->
-                                                </div>
-                                                <div class="list-caption">
-                                                    <span>Open</span>
-                                                    <h3><a href="listing_details.html">{{$post->title}}</a></h3>
-                                                    <p>{!!$post->description!!}</p>
-                                                    <p>{{$post->address}}</p>
-                                                    <p>{{$post->city}}</p>
-                                                    <div class="list-footer">
-                                                        <ul>
-                                                            <li>{{$post['contact'][0]->contact_name ?? ''}}</li>
-                                                            <li>{{$post['contact'][0]->contact_mobile ?? '' }}</li>
-                                                            <li>{{$post['contact'][0]->contact_mail ?? ''}}</li>
-                                                            <li>
-                                                                @foreach ($post['categories'] as $category)
-                                                                    <i class="chip">{{$category->category_name}}</i>
-                                                                @endforeach
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> --}}
                                     @endforeach
                                     <!-- post card ends   -->
                                 </div>
@@ -298,7 +271,4 @@
     </div>
 @endsection
 @section('js')
-    <script type="text/javascript">
-
-    </script>
 @endsection
