@@ -98,7 +98,7 @@
               <div class="card-body">
                 <div class="md-form mb-0 mt-2">
                   <textarea id="froala_description">{!!$post->description!!}</textarea>
-                  <input type="text" name="description" hidden="" id="description" value="{!!$post->description!!}">
+                  <input type="text" name="description" hidden="" id="description" value="">
                 </div>
               </div>
             </div>
@@ -235,10 +235,6 @@
         $(this).prop('checked', false);
       }
     });
-    function desc(){
-            $('#description').val(tinymce.activeEditor.getContent());
-            console.log(tinymce.activeEditor.getContent());
-        }
         $("#address-textarea").on('change keyup paste', function() {
             $('#address').val($('#address-textarea').val());
         });

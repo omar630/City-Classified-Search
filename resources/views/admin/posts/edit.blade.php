@@ -12,6 +12,9 @@
             max-height: 300px;
             overflow: auto;
         }
+        .elementor-element{
+          display: none;
+        }
 </style>
 @endsection
 @section('content')
@@ -45,9 +48,9 @@
                 <div class="select-itms" style="margin-right: 120px">
                   <select name="city" class="form-control" style="margin: inherit;" required="">
                       <option value="">Select an City</option>
-                      <option value="hyderabad">Hyderabad</option>
-                      <option value="mumbai">Mumbai</option>
-                      <option value="delhi">Delhi</option>
+                      <option value="hyderabad" @if($post->city == 'hyderabad') selected='' @endif>Hyderabad</option>
+                      <option value="mumbai" @if($post->city == 'mumbai') selected='' @endif>Mumbai</option>
+                      <option value="delhi" @if($post->city == 'delhi') selected='' @endif>Delhi</option>
                   </select>
                 </div>
               </div>
@@ -60,10 +63,14 @@
             </div>
           </div>
             <!-- Second card -->
-            <!-- Third card -->
+            <!-- Third Card -->
             <div class="card mb-4">
-              <textarea id="froala_description">{!!$post->description!!}</textarea>
-              <input type="text" name="description" hidden="" id="description" value="{!!$post->description!!}">
+              <div class="card-body">
+                <div class="md-form mb-0 mt-2">
+                  <textarea id="froala_description">{!!$post->description!!}</textarea>
+                  <input type="text" name="description" hidden="" id="description" value="">
+                </div>
+              </div>
             </div>
             <!-- Third card -->
 
@@ -186,12 +193,10 @@
             $(this).prop('checked', false);
           }
         });
-        function desc(){
-            $('#description').val(tinymce.activeEditor.getContent());
-        }
         $("#address-textarea").on('change keyup paste', function() {
             $('#address').val($('#address-textarea').val());
         });
+
     </script>
         @if(isset($response))
         <script type="text/javascript">

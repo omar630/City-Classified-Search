@@ -35,6 +35,20 @@
               </div>
             </div>
             <!-- First card -->
+            <!-- First card -->
+            <div class="card mb-4 post-title-panel">
+              <div class="card-body">
+                <div class="select-itms" style="margin-right: 120px">
+                  <select name="city" class="form-control" style="margin: inherit;" required="">
+                      <option value="">Select an City</option>
+                      <option value="hyderabad">Hyderabad</option>
+                      <option value="mumbai">Mumbai</option>
+                      <option value="delhi">Delhi</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- First card -->
 
             <!-- Second card -->
            <div class="card mb-4 post-title-panel">

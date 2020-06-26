@@ -113,8 +113,9 @@
                 <hr class="mb-5 mt-4">
                 @if(count($post['contact'])>0)
                   <h6><strong>Contact Details:</strong></h6>
-                  <h6><strong>Name:</strong>{{$post['contact'][0]->contact_name}}</h6>
-                  <h6><strong>Mobile:</strong>{{$post['contact'][0]->contact_mobile}}</h6>
+                  @if($post['contact'][0]->contact_name != '')<h6><strong>Name:</strong>{{$post['contact'][0]->contact_name}}</h6>@endif
+                  @if($post['contact'][0]->contact_mobile != '')<h6><strong>Mobile:</strong>{{$post['contact'][0]->contact_mobile}}</h6>@endif
+                  @if($post['contact'][0]->contact_email != '')<h6><strong>Email:</strong>{{$post['contact'][0]->contact_email}}</h6>@endif
                 @endif
                 <div class="mt-4 d-flex justify-content-end">
                 @php $array=array('pink','badge-primary','badge-info') @endphp

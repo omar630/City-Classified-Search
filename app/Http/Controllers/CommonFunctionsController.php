@@ -41,7 +41,7 @@ class CommonFunctionsController extends Controller
             'cover_image'    => $imageName
         ]);
 
-        if (isset($request->contact_name) && $request->contact_name != '') {
+        if (isset($request->contact_name) && $request->contact_name != '' || isset($request->contact_email) && $request->contact_email != '' || isset($request->contact_mobile) && $request->contact_mobile != '') {
             ContactDetail::create([
                 'post_id'        => $post->id,
                 'contact_name'   => $request->contact_name,
@@ -73,10 +73,8 @@ class CommonFunctionsController extends Controller
             'cover_image'    => $imageName,
             'city' => $request->city
         ]);
-        if(isset($request->contact_name) && $request->contact_name != ''){
-            $contact = ContactDetail::where('post_id',$request->post_id);
-            $contact->updateOrCreate([
-                'post_id' => $request->post_id,
+        if (isset($request->contact_name) && $request->contact_name != '' || isset($request->contact_email) && $request->contact_email != '' || isset($request->contact_mobile) && $request->contact_mobile != '') {
+            $contact = ContactDetail::updateOrCreate(['post_id' => $request->post_id],[
                 'contact_name' => $request->contact_name,
                 'contact_mobile' => $request->contact_mobile,
                 'contact_email' => $request->contact_email
